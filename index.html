@@ -1,0 +1,156 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Of Objects</title>
+
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #ffffff;
+
+      --youtube: #ff0000;
+      --facebook: #1877f2;
+      --reddit: #ff4500;
+      --x: #000000;
+      --instagram: #e1306c;
+      --linkedin: #0a66c2;
+
+      --tiktok: #010101;
+      --discord: #5865F2;
+      --telegram: #229ED9;
+      --whatsapp: #25D366;
+
+      --radius: 999px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-family: system-ui, sans-serif;
+      padding: 1.2rem;
+      gap: 1.2rem;
+    }
+
+    .logo-top {
+      display: flex;
+      justify-content: center;
+    }
+
+    .logo-top img {
+      width: min(230px, 55vw);
+      height: auto;
+      filter: drop-shadow(0 0 35px rgba(0, 153, 255, 0.35));
+    }
+
+    .tagline {
+      font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+      font-weight: 600;
+      opacity: 0.9;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+
+    /* ---------- GRID SYSTEM ---------- */
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 1rem;
+    
+      margin: 0 auto;
+    }
+
+    @media (max-width: 800px) {
+      .button-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0.8rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+      border-radius: var(--radius);
+      color: white;
+      transition: 0.15s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      filter: brightness(1.15);
+    }
+
+    .youtube  { background: var(--youtube); }
+    .facebook { background: var(--facebook); }
+    .reddit   { background: var(--reddit); }
+    .x        { background: var(--x); border: 1px solid #444; }
+    .instagram{ background: var(--instagram); }
+    .linkedin { background: var(--linkedin); }
+    .tiktok   { background: var(--tiktok); border: 1px solid #333; }
+    .discord  { background: var(--discord); }
+    .telegram { background: var(--telegram); }
+    .whatsapp { background: var(--whatsapp); }
+
+    footer {
+      margin-top: auto;
+      opacity: 0.6;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="logo-top">
+    <img src="logo.png" alt="Logo" />
+  </div>
+
+  <!-- INVITATION TEXT -->
+  <p class="tagline">
+What if computers could organize information the way we think, not the way we file?<br><br>
+Today’s digital world is broken. It is still stuck in an old system of files and folders across many apps that do not talk to each other, do not share structure, and do not connect our ideas.<br><br>
+Introducing Web Of Objects, the web reinvented as a high level operating system.<br><br>
+It is a new computing layer that goes beyond files and folders and beyond links and pages and becomes a living web of objects that reflects how humans think.<br><br>
+It introduces a universal way to represent and connect information, both structured and unstructured, both personal and collective, all inside one coherent environment.<br><br>
+Follow us on social media to stay close to our journey and see what comes next.
+  </p>
+
+  <!-- SOCIAL BUTTONS -->
+  <div class="button-grid">
+    <a class="btn youtube" href="https://www.youtube.com/@WebOfObjects" target="_blank">YouTube</a>
+    <a class="btn linkedin" href="https://www.linkedin.com/company/WebOfObjects" target="_blank">LinkedIn</a>
+    <a class="btn facebook" href="https://www.facebook.com/WebOfObjects" target="_blank">Facebook</a>
+    <a class="btn instagram" href="https://www.instagram.com/WebOfObjects" target="_blank">Instagram</a>
+    <a class="btn tiktok" href="https://www.tiktok.com/@WebOfObjects" target="_blank">TikTok</a>
+    <a class="btn x" href="https://x.com/WebOfObjects" target="_blank">X</a>
+    <a class="btn reddit" href="https://www.reddit.com/r/WebOfObjects" target="_blank">Reddit</a>
+    <!-- <a class="btn telegram" href="https://t.me/webofobjects" target="_blank">Telegram</a>
+    <a class="btn whatsapp" href="https://chat.whatsapp.com/BDXeNnRtFyVBghSQG8cR0s" target="_blank">WhatsApp</a>-->
+  </div>
+
+  <footer>
+    © 2025 Web Of Objects. All rights reserved.<br>
+  </footer>
+
+</body>
+</html>
