@@ -47,6 +47,10 @@
       gap: 1.2rem;
     }
 
+	#call-to-unite {
+	  margin-top: -1.2rem; 
+	}
+
     /* ---------- LOGO + MENU ---------- */
     .logo-top {
       display: flex;
@@ -91,16 +95,22 @@
     }
 
     @media (max-width: 600px) {
+	
       .logo-top {
         flex-direction: column;  /* menu below logo on small screens */
       }
 
+	.main-nav  {
+      margin-top: -1.2rem;
+    }
       .main-nav a {
         width: 100%;
         max-width: 275px;
         justify-content: center;
+		
       }
-    }
+    }	
+
 
     .tagline {
       font-size: clamp(1.1rem, 2.6vw, 1.6rem);
