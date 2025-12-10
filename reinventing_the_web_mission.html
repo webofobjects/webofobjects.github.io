@@ -3,18 +3,61 @@
 <head> 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <title>Reinventing the Web — Crazy or Inevitable? — Web Of Objects Blog</title>
-  <meta name="description" content="Why our mission is to reinvent the Web">
-  <link rel="canonical" href="/reinventing_the_web_mission.html">
 
+  <!-- Primary SEO -->
+  <title>Reinventing the Web — Crazy or Inevitable? | Web Of Objects Blog</title>
+  <meta name="description" content="Why reinventing the Web is not crazy but inevitable. An exploration of Tim Berners-Lee's original vision." />
+  <link rel="canonical" href="https://webofobjects.com/reinventing_the_web_mission.html">
+
+  <!-- Icons -->
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/logo.png" as="image">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Reinventing the Web — Crazy or Inevitable?" />
-  <meta property="og:description" content="Why our mission is to reinvent the Web" />
-  <meta property="og:image" content="/preview.png" />
+  <meta property="og:description" content="Why reinventing the Web is not crazy but inevitable. An exploration of Tim Berners-Lee's original vision." />
+  <meta property="og:image" content="https://webofobjects.com/preview.png" />
+  <meta property="og:url" content="https://webofobjects.com/reinventing_the_web_mission.html" />
   <meta property="og:type" content="article" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reinventing the Web — Crazy or Inevitable?" />
+  <meta name="twitter:description" content="Why reinventing the Web is not crazy but inevitable. An exploration of Tim Berners-Lee's original vision." />
+  <meta name="twitter:image" content="https://webofobjects.com/preview.png" />
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="keywords" content="reinventing the web, future of the web, web of objects, decentralized web, open web movement, web evolution, tim berners-lee vision">
+
+  <!-- Schema.org Article Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Reinventing the Web — Crazy or Inevitable?",
+    "description": "Why reinventing the Web is not crazy but necessary. An exploration of Tim Berners-Lee's original vision.",
+    "image": "https://webofobjects.com/preview.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Web Of Objects"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Web Of Objects",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://webofobjects.com/logo.png"
+      }
+    },
+    "datePublished": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://webofobjects.com/reinventing_the_web_mission.html"
+    }
+  }
+  </script>
 
   <style>
     body {
@@ -87,112 +130,126 @@
       .main-nav { margin-top:-1.2rem; }
       .main-nav a { width:100%; max-width:440px; }
     }
-	
-	.tagline-style {
-	  font-size: clamp(1.1rem, 2.6vw, 1.6rem);
-	  font-weight: 600;
-	  opacity: 0.9;
-	  text-align: left;
-	  line-height: 1.55;
-	}
 
-	  .yt-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #ff8a00;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 6px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.18s ease;
-  }
+    .tagline-style {
+      font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+      font-weight: 600;
+      opacity: 0.9;
+      text-align: left;
+      line-height: 1.55;
+    }
 
-  .yt-btn:hover {
-    background: #ff9f2d;   /* lighter orange */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(255, 138, 0, 0.4);
-  }
+    .yt-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ff8a00;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.18s ease;
+    }
 
-  .yt-btn:active {
-    background: #e67a00;   /* darker for press effect */
-    transform: translateY(1px);
-    box-shadow: 0 2px 5px rgba(255, 138, 0, 0.3);
-  }
+    .yt-btn:hover {
+      background: #ff9f2d;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(255, 138, 0, 0.4);
+    }
+
+    .yt-btn:active {
+      background: #e67a00;
+      transform: translateY(1px);
+      box-shadow: 0 2px 5px rgba(255, 138, 0, 0.3);
+    }
+
+    .breadcrumb {
+      margin: 1rem 0;
+      font-size: 0.85rem;
+      opacity: 0.75;
+    }
+    .breadcrumb a {
+      color: #4da8ff;
+      text-decoration: none;
+    }
   </style>
 </head>
 
 <body>
 
   <div class="logo-top">
-    <a href="/"><img src="logo.png" alt="Web Of Objects Home" /></a>
+    <a href="/"><img src="logo.png" alt="Web Of Objects Home" loading="lazy" /></a>
     <nav class="main-nav">
-<a href="index.html#call-to-unite">1. Building a Web Society — The Call to Unite</a>
-<a href="index.html#web-reinvented">2. Reinventing the Web — Web Of Objects</a>
-<a href="index.html#objectives-actions">3. Objectives & Actions</a>
-<a href="index.html#blog" class="active">4. Blog</a>
+      <a href="index.html#call-to-unite">1. Building a Web Society — The Call to Unite</a>
+      <a href="index.html#web-reinvented">2. Reinventing the Web — Web Of Objects</a>
+      <a href="index.html#objectives-actions">3. Objectives & Actions</a>
+      <a href="index.html#blog" class="active">4. Blog</a>
     </nav>
   </div>
 
   <main class="blog-wrap">
+
+    <div class="breadcrumb">
+      <a href="/">Home</a> › 
+      <a href="/index.html#blog">Blog</a> › 
+      Reinventing the Web — Crazy or Inevitable?
+    </div>
+
     <div class="blog-kicker">Web Of Objects Blog</div>
 
+    <article class="blog-body tagline-style">
 
+      <h1 class="blog-title">Reinventing the Web — Crazy or Inevitable?</h1>
 
-<article class="blog-body tagline-style">
+      <p>It might sound big, unclear, or hard to imagine — I get that.</p>
+      <p>But we forget something important: we take the web for granted.</p>
 
-    <h1 class="blog-title">Reinventing the Web — Crazy or Inevitable?</h1>
+      <h2>Tim Berners-Lee’s Original Vision</h2>
 
-  <p>It might sound big, unclear, or hard to imagine — I get that.</p>
+      <p>Tim Berners-Lee, the creator of the World Wide Web, has said many times that today’s web is not what he hoped for.</p>
 
-  <p>But we forget something important: we take the web for granted.</p>
+      <p>1️⃣ He wanted an open web that no single company could control.<br>
+      Instead, a few tech giants now decide what we see and where our data is stored.</p>
 
- <p>Tim Berners-Lee, the creator of the World Wide Web, has said many times that today’s web is not what he hoped for.</p>
+      <p>2️⃣ He never imagined the web would turn into a tool for surveillance.<br>
+      The web was not meant to track people, sell their data, or monitor their behavior.</p>
 
-  <p>1️⃣ He wanted an open web that no single company could control.</p>
-  <p>But today, a few tech giants decide what we see and where our data is stored.</p>
+      <p>3️⃣ He pictured a place for real collaboration, not endless scrolling.<br>
+      His first web browser let people read and edit pages. Now the web is mostly “read-only.”</p>
 
-  <p>2️⃣ He never imagined the web would turn into a tool for surveillance.</p>
-  <p>It was not meant to track people, sell their data, or monitor their behavior.</p>
+      <p>4️⃣ He didn’t expect misinformation and online hate to spread so easily.</p>
 
-  <p>3️⃣ He pictured a place for real collaboration, not endless scrolling.</p>
-  <p>His first web browser let people read and edit pages. Now, the web is mostly “read-only.”</p>
+      <p>5️⃣ He didn’t think the web would become so commercial — ads, paywalls, engagement tricks everywhere.</p>
 
-  <p>4️⃣ He didn’t expect misinformation and online hate to spread so easily.</p>
-  <p>This kind of negativity was never part of the plan.</p>
+      <p>He once said: <em>“The web was supposed to help humanity, but it has been hijacked by forces that undermine its goals.”</em></p>
 
-  <p>5️⃣ He didn’t think the web would become so commercial.</p>
-  <p>Ads, paywalls, and engagement tricks now shape most of the online world.</p>
+      <h2>So Why Reinvent the Web?</h2>
 
-  <p>He once said: <em>“The web was supposed to help humanity, but it has been hijacked by forces that undermine its goals.”</em></p>
+      <p>✨ Because the original idea was better than what we have now.</p>
+      <p>✨ Because people deserve control, connection, and creativity — not just consumption.</p>
+      <p>✨ Because the web can still become what it was meant to be.</p>
 
-  <p>✨ So I dare you to be curious.</p>
+      <h2>Join the Movement</h2>
 
-  <p>💡 Give our ideas a chance.</p>
+      <p>💡 Give our ideas a chance.<br>
+      🫶 Share our message if you want to help.</p>
 
-<a href="https://www.youtube.com/@webofobjects"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="yt-btn">
-  📺 <span>Subscribe to our YouTube channel</span>
-</a>
+      <a href="https://www.youtube.com/@webofobjects"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="yt-btn">
+        📺 <span>Subscribe to our YouTube channel</span>
+      </a>
 
+      <p>❤️ And one day, when people realize the web can be much more than pages, you will be able to say:  
+      <em>“I was there at the beginning. I helped reinvent the Web.”</em></p>
 
-
-
-  <p>🫶 Share our message if you want to help.</p>
-
-  <p>❤️ And one day, when people realize the web can be much more than pages, you will be able to say: “I was there at the beginning. I helped reinvent the Web”</p>
-
-</article>
-
-
-
+    </article>
 
     <div class="back-link">
-      <a href="/">Back to home</a>
+      <a href="/">← Back to home</a>
     </div>
 
   </main>
