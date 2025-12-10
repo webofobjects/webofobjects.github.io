@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Of Objects Blog — Journal & Updates</title>
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta name="robots" content="index,follow">
+  <meta property="og:site_name" content="Web Of Objects">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://www.webofobjects.com/preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="title" content="Web Of Objects Blog — Journal & Updates">
+  <meta name="description" content="Web Of Objects blog — long-form thoughts, essays and updates.">
+
+  <link rel="canonical" href="https://www.webofobjects.com/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.webofobjects.com/blog.html">
+  <meta property="og:title" content="Web Of Objects Blog — Journal & Updates">
+  <meta property="og:description" content="Web Of Objects blog — long-form thoughts, essays and updates.">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.webofobjects.com/blog.html">
+  <meta property="twitter:title" content="Web Of Objects Blog — Journal & Updates">
+  <meta property="twitter:description" content="Web Of Objects blog — long-form thoughts, essays and updates.">
+  <meta name="keywords" content="Web Of Objects blog, web operating system, web OS, interconnected objects, post-file future">
+
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #ffffff;
+
+      --youtube: #ff0000;
+      --facebook: #1877f2;
+      --reddit: #ff4500;
+      --x: #000000;
+      --instagram: #e1306c;
+      --linkedin: #0a66c2;
+      --tiktok: #010101;
+      --discord: #5865F2;
+      --telegram: #229ED9;
+      --whatsapp: #25D366;
+      --threads: #000000;
+      --radius: 999px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-family: system-ui, sans-serif;
+      padding: 1.2rem;
+      gap: 1.2rem;
+    }
+
+    /* ---------- LOGO + MENU (same as home) ---------- */
+    .logo-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    .logo-top img {
+      width: min(230px, 55vw);
+      height: auto;
+      filter: drop-shadow(0 0 35px rgba(0, 153, 255, 0.35));
+    }
+
+    .main-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      text-align: left;
+      font-size: 0.95rem;
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .main-nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.04);
+      transition: 0.15s;
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover {
+      transform: translateX(4px);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .main-nav a.active {
+      background: rgba(255,255,255,0.2);
+      transform: none;
+    }
+
+    @media (max-width: 700px) {
+      .logo-top {
+        flex-direction: column;
+      }
+      .main-nav {
+        margin-top: -1.2rem;
+      }
+      .main-nav a {
+        width: 100%;
+        max-width: 440px;
+        justify-content: center;
+      }
+    }
+
+    footer {
+      margin-top: auto;
+      opacity: 0.6;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    /* ---------- BLOG INDEX (titles only) ---------- */
+    .blog-index {
+      max-width: 800px;
+      margin: 1.8rem auto 0 auto;
+      text-align: left;
+    }
+
+    .blog-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-title-main {
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      font-weight: 700;
+      margin-bottom: 1.6rem;
+    }
+
+    .blog-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .blog-list li a {
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.03);
+      display: inline-block;
+      transition: 0.15s;
+    }
+
+    .blog-list li a:hover {
+      transform: translateX(4px);
+      background: rgba(255,255,255,0.12);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="logo-top">
+    <a href="/">
+      <img src="logo.png" alt="Web Of Objects Home" />
+    </a>
+    <nav class="main-nav">
+      <a href="/#call-to-unite">1. Inventing &amp; Building a Web Society — The Call to Unite</a>
+      <a href="/#web-reinvented">2. Inventing &amp; Building a Web OS — Web Of Objects</a>
+      <a href="/#objectives-actions">3. Objectives &amp; Actions — by Q1 2026</a>
+      <a href="/blog.html" class="active">4. Blog — Journal &amp; Updates</a>
+    </nav>
+  </div>
+
+  <main class="blog-index">
+    <div class="blog-kicker">Web Of Objects Blog</div>
+    <h1 class="blog-title-main">Journal &amp; Updates</h1>
+
+    <ul class="blog-list">
+      <!-- Each item: TITLE ONLY -->
+      <li>
+        <a href="/blog-post-why-web-needs-web-os.html">
+          Why the Web Needs a Web Operating System
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          From Fragmented Apps to a Web Society (coming soon)
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Inside the Web Of Objects Prototype (coming soon)
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    © 2025 WisdomHunt SRL. All rights reserved.<br>
+  </footer>
+
+</body>
+</html>
