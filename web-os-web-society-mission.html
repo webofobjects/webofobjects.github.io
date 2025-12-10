@@ -96,6 +96,31 @@
 	  line-height: 1.55;
 	}
 
+	  .yt-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ff8a00;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.18s ease;
+  }
+
+  .yt-btn:hover {
+    background: #ff9f2d;   /* lighter orange */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 138, 0, 0.4);
+  }
+
+  .yt-btn:active {
+    background: #e67a00;   /* darker for press effect */
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(255, 138, 0, 0.3);
+  }
   </style>
 </head>
 
@@ -147,7 +172,15 @@
 
   <p>💡 Give our ideas a chance.</p>
 
-  <p>📺 Subscribe to our YouTube channel.</p>
+<a href="https://www.youtube.com/@webofobjects"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="yt-btn">
+  📺 <span>Subscribe to our YouTube channel</span>
+</a>
+
+
+
 
   <p>🫶 Share our message if you want to help.</p>
 
