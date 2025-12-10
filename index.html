@@ -329,6 +329,36 @@
     .blog-card a.read-link:hover {
       text-decoration: underline;
     }
+	
+	    /* ---------- BLOG LINKS ---------- */
+    .blog-links {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .blog-link-row {
+      margin-bottom: 0.9rem;
+    }
+
+    .blog-link-btn {
+      display: inline-block;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.18);
+      transition: 0.15s;
+    }
+
+    .blog-link-btn:hover {
+      transform: translateX(4px);
+      background: rgba(255,255,255,0.12);
+    }
+
+
   </style>
 </head>
 
@@ -453,84 +483,23 @@
       <a class="btn facebook" href="https://www.facebook.com/WebOfObjects" target="_blank">Facebook</a> 
     </div>
   </section>
+
 <section id="blog">
   <div class="phase-wrapper">
     <div class="phase-line"></div>
-    <div class="phase-text">4. Blog — Journal & Updates</div>
+    <div class="phase-text">4. Blog — Journal &amp; Updates</div>
     <div class="phase-line"></div>
   </div>
 
-  <div style="max-width:1200px; margin:0 auto; text-align:left;">
+  <div class="blog-links">
 
-    <!-- BLOG BUTTONS -->
-    <p class="tagline" style="margin-bottom:0.9rem;">
-      <a href="/blog-post-why-web-needs-web-os.html"
-        style="
-          display:inline-block;
-          padding:0.55rem 1rem;
-          border-radius:999px;
-          color:white;
-          font-weight:600;
-          text-decoration:none;
-          background:rgba(255,255,255,0.06);
-          border:1px solid rgba(255,255,255,0.18);
-          transition:0.15s;">
-        Why the Web Needs a Web Operating System
-      </a>
-    </p>
-
-    <p class="tagline" style="margin-bottom:0.9rem;">
-      <a href="#"
-        style="
-          display:inline-block;
-          padding:0.55rem 1rem;
-          border-radius:999px;
-          color:white;
-          font-weight:600;
-          text-decoration:none;
-          background:rgba(255,255,255,0.06);
-          border:1px solid rgba(255,255,255,0.18);
-          transition:0.15s;">
-        From Fragmented Apps to a Web Society (coming soon)
-      </a>
-    </p>
-
-    <p class="tagline">
-      <a href="#"
-        style="
-          display:inline-block;
-          padding:0.55rem 1rem;
-          border-radius:999px;
-          color:white;
-          font-weight:600;
-          text-decoration:none;
-          background:rgba(255,255,255,0.06);
-          border:1px solid rgba(255,255,255,0.18);
-          transition:0.15s;">
-        Inside the Web Of Objects Prototype (coming soon)
-      </a>
-    </p>
-
+		<p class="tagline blog-link-row">
+		  <a href="blog-post-web-society-mission.html" class="blog-link-btn">
+			Why My Mission Is to Invent a Web Operating System & a Web Society
+		  </a>
+		</p>
   </div>
 </section>
-
-<script>
-  // Button hover animation identical to your menu buttons
-  document.querySelectorAll('#blog a').forEach(a => {
-    a.addEventListener('mouseenter', () => {
-      a.style.transform = 'translateX(4px)';
-      a.style.background = 'rgba(255,255,255,0.12)';
-    });
-    a.addEventListener('mouseleave', () => {
-      a.style.transform = 'none';
-      a.style.background = 'rgba(255,255,255,0.06)';
-    });
-  });
-</script>
-
-
-
-
 
   <footer>
     © 2025 WisdomHunt SRL. All rights reserved.<br>
