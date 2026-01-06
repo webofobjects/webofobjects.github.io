@@ -40,7 +40,6 @@
       "https://www.threads.net/@webofobjects",
       "https://x.com/webofobjects",
       "https://www.linkedin.com/company/webofobjects",
-      "https://www.reddit.com/r/webofobjects",
       "https://www.facebook.com/webofobjects"
     ]
   }
@@ -390,6 +389,36 @@
       .blog-link-btn { display: block; text-align: center; }
       .tagline { text-align: left; }
     }
+
+	.uws-link-btn {
+	  display: inline-flex;          /* key change */
+	  align-items: center;
+	  vertical-align: baseline;      /* prevents line jump */
+	  margin: 0 0.15rem;
+	  padding: 0.12em 0.65em;        /* em-based padding = scalable */
+	  line-height: 1;                /* lock internal height */
+	  font-weight: 700;
+	  text-decoration: none;
+	  color: #ffffff;
+	  border-radius: 999px;
+	  background: rgba(77, 168, 255, 0.18);
+	  border: 1px solid rgba(77, 168, 255, 0.5);
+	  box-shadow:
+		0 0 10px rgba(77, 168, 255, 0.22),
+		inset 0 0 6px rgba(255, 255, 255, 0.08);
+	  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+	  white-space: nowrap;
+	}
+
+	.uws-link-btn:hover {
+	  transform: translateY(-1px);
+	  background: rgba(77, 168, 255, 0.32);
+	  box-shadow:
+		0 0 18px rgba(77, 168, 255, 0.4),
+		inset 0 0 8px rgba(255, 255, 255, 0.12);
+	}
+
+
   </style>
 </head>
 
@@ -453,7 +482,7 @@
       🕸️ Web of Objects is a new computing layer that goes beyond files and folders — and beyond links and pages — to create a living network of interconnected objects that mirrors how humans think.<br><br>
       ♾️ It provides a universal way to represent and connect information — structured or unstructured, personal or collective — all within one coherent environment.<br><br>
       ⚠️ But technology alone isn’t enough. The AI revolution shows that innovation can advance humanity while also displacing people — not because tech is harmful, but because our profit-driven systems use it to cut costs instead of lifting everyone.<br><br>
-      🌍 We need a new way to think about the world: a United Web Society that unites people across borders and cultures, where technology serves humanity and business is shaped for shared progress, not just profit. <br><br>
+      🌍 We need a new way to think about the world: a <a href="http://unitedwebsociety.com" class="uws-link-btn" target="_blank" rel="noopener"> United Web Society </a> that unites people across borders and cultures, where technology serves humanity and business is shaped for shared progress, not just profit. <br><br>
       🫶 Join our rebellion — because when humanity unites, the status quo doesn’t stand a chance.
     </p>
 
