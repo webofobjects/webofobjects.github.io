@@ -81,7 +81,6 @@
       gap: 1.2rem;
       position: relative;
       overflow-x: hidden;
-      /* extra safety for long strings on small screens */
       overflow-wrap: anywhere;
       word-break: break-word;
     }
@@ -92,8 +91,8 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;          /* behind content */
-      pointer-events: none; /* don't block clicks */
+      z-index: -1;
+      pointer-events: none;
       opacity: 0.9;
     }
 
@@ -133,9 +132,10 @@
       border: 1px solid rgba(255,255,255,0.18);
       background: rgba(255,255,255,0.04);
       transition: 0.15s;
-      white-space: normal; /* allow wrapping on small screens */
+      white-space: normal;
       line-height: 1.25;
-	  font-weight: 600;
+      font-weight: 600;
+      cursor: pointer; /* because we removed href */
     }
 
     .main-nav a:hover {
@@ -157,14 +157,10 @@
         padding: 0.55rem 0.9rem;
       }
     }
-	
-	@media (max-width: 400px) {
-      .main-nav {
-        font-weight: 400;
-      }
+
+    @media (max-width: 400px) {
+      .main-nav { font-weight: 400; }
     }
-	
-	
 
     .tagline {
       font-size: clamp(1.05rem, 3.4vw, 1.6rem);
@@ -211,12 +207,11 @@
       border-radius: var(--radius);
       color: white;
       transition: 0.15s;
-      min-height: 48px; /* better tap target on mobile */
+      min-height: 48px;
       user-select: none;
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* avoid “jumpiness” on touch devices */
     @media (hover: none) {
       .btn:hover { transform: none; filter: none; }
       .main-nav a:hover { transform: none; }
@@ -268,7 +263,7 @@
       font-size: clamp(0.95rem, 3.6vw, 1.3rem);
       font-weight: 600;
       color: #ffffff;
-      white-space: normal; /* allow wrap on small screens */
+      white-space: normal;
       line-height: 1.25;
       text-align: center;
     }
@@ -390,35 +385,33 @@
       .tagline { text-align: left; }
     }
 
-	.uws-link-btn {
-	  display: inline-flex;          /* key change */
-	  align-items: center;
-	  vertical-align: baseline;      /* prevents line jump */
-	  margin: 0 0.15rem;
-	  padding: 0.12em 0.65em;        /* em-based padding = scalable */
-	  line-height: 1;                /* lock internal height */
-	  font-weight: 700;
-	  text-decoration: none;
-	  color: #ffffff;
-	  border-radius: 999px;
-	  background: rgba(77, 168, 255, 0.18);
-	  border: 1px solid rgba(77, 168, 255, 0.5);
-	  box-shadow:
-		0 0 10px rgba(77, 168, 255, 0.22),
-		inset 0 0 6px rgba(255, 255, 255, 0.08);
-	  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
-	  white-space: nowrap;
-	}
+    .uws-link-btn {
+      display: inline-flex;
+      align-items: center;
+      vertical-align: baseline;
+      margin: 0 0.15rem;
+      padding: 0.12em 0.65em;
+      line-height: 1;
+      font-weight: 700;
+      text-decoration: none;
+      color: #ffffff;
+      border-radius: 999px;
+      background: rgba(77, 168, 255, 0.18);
+      border: 1px solid rgba(77, 168, 255, 0.5);
+      box-shadow:
+        0 0 10px rgba(77, 168, 255, 0.22),
+        inset 0 0 6px rgba(255, 255, 255, 0.08);
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+      white-space: nowrap;
+    }
 
-	.uws-link-btn:hover {
-	  transform: translateY(-1px);
-	  background: rgba(77, 168, 255, 0.32);
-	  box-shadow:
-		0 0 18px rgba(77, 168, 255, 0.4),
-		inset 0 0 8px rgba(255, 255, 255, 0.12);
-	}
-
-
+    .uws-link-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(77, 168, 255, 0.32);
+      box-shadow:
+        0 0 18px rgba(77, 168, 255, 0.4),
+        inset 0 0 8px rgba(255, 255, 255, 0.12);
+    }
   </style>
 </head>
 
@@ -430,10 +423,23 @@
     <a href="https://webofobjects.com">
       <img src="logo.png" alt="Web of Objects Home" />
     </a>
-    <nav class="main-nav">
-	  <a href="#web-reinvented">1. Reinventing the Web — Web of Objects</a>
-      <a href="#call-to-unite">2. Building a Web Society — The Call to Unite</a> 
-      <a href="#blog">3. Blog</a>
+
+    <!-- ✅ UPDATED NAV: no #hash links -->
+    <nav class="main-nav" aria-label="On-page navigation">
+      <a href="/"
+         data-scroll="web-reinvented"
+         role="button"
+         aria-controls="web-reinvented">1. Reinventing the Web — Web of Objects</a>
+
+      <a href="/"
+         data-scroll="call-to-unite"
+         role="button"
+         aria-controls="call-to-unite">2. Building a Web Society — The Call to Unite</a>
+
+      <a href="/"
+         data-scroll="blog"
+         role="button"
+         aria-controls="blog">3. Blog</a>
     </nav>
   </div>
 
@@ -450,7 +456,7 @@
       🌐 Introducing Web of Objects — the Web Reinvented as a High-level Operating System.<br><br>
       🕸️ Web of Objects is a new computing layer that goes beyond files and folders — and beyond links and pages — to create a living network of interconnected objects that mirrors how humans think.<br><br>
       ♾️ It provides a universal way to represent and connect information — structured or unstructured, personal or collective — all within one coherent environment.<br><br>
-	  🪐 The <a href="https://webverse.global" class="uws-link-btn" target="_blank" rel="noopener">webverse</a> is the space on the Internet built on the Web of Objects, where web pages become objects, websites become worlds, and the World Wide Web becomes a universe.<br><br>
+      🪐 The <a href="https://webverse.global" class="uws-link-btn" target="_blank" rel="noopener">webverse</a> is the space on the Internet built on the Web of Objects, where web pages become objects, websites become worlds, and the World Wide Web becomes a universe.<br><br>
       ⚠️ But technology alone isn’t enough. The AI revolution shows that innovation can advance humanity while also displacing people — not because tech is harmful, but because our profit-driven systems use it to cut costs instead of lifting everyone.<br><br>
       🌍 We need a new way to think about the world: a <a href="https://websociety.global" class="uws-link-btn" target="_blank" rel="noopener"> web society </a> that unites people across borders and cultures, where technology serves humanity and business is shaped for shared progress, not just profit. <br><br>
       🫶 Join our rebellion — because when humanity unites, the status quo doesn’t stand a chance.
@@ -516,6 +522,35 @@
   <footer>
     © 2026 WEB SOCIETY. All rights reserved.<br>
   </footer>
+
+  <!-- ✅ NEW: hash-less smooth scrolling for your menu -->
+  <script>
+    (function () {
+      const headerOffset = 0; // set to your fixed header height if you add one
+      const links = document.querySelectorAll('.main-nav a[data-scroll]');
+
+      function scrollToId(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        // offset-friendly smooth scroll (works better than scrollIntoView if you ever add a sticky header)
+        const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+
+        // optional: accessibility - move focus without scrolling again
+        el.setAttribute('tabindex', '-1');
+        el.focus({ preventScroll: true });
+      }
+
+      links.forEach(a => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();          // prevents URL changing
+          scrollToId(a.dataset.scroll);
+        });
+      });
+    })();
+  </script>
 
   <!-- Particle Web Background Script -->
   <script>
