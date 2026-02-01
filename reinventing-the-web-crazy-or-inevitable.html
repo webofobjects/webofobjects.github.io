@@ -90,6 +90,7 @@
       border:1px solid rgba(255,255,255,0.18);
       background:rgba(255,255,255,0.04);
       transition:0.15s;
+      cursor: pointer; /* because we prevent default on "section" links */
     }
     .main-nav a:hover { transform:translateX(4px); background:rgba(255,255,255,0.12); }
     .main-nav a.active { background:rgba(255,255,255,0.2); }
@@ -174,8 +175,8 @@
       color: white;
       text-decoration: none;
     }
-	
-	footer {
+
+    footer {
       margin-top: auto;
       opacity: 0.6;
       font-size: 0.9rem;
@@ -192,21 +193,32 @@
 
   <div class="logo-top">
     <a href="/"><img src="logo.png" alt="Web of Objects Home" loading="lazy" /></a>
-    <nav class="main-nav">
-      <a href="/#call-to-unite">1. Building a Web Society — The Call to Unite</a>
-      <a href="/#web-reinvented">2. Reinventing the Web — Web of Objects</a>
-      <a href="/#objectives-actions">3. Objectives & Actions</a>
-      <a href="/#blog" class="active">4. Blog</a>
+
+    <!-- ✅ UPDATED NAV: no /#hash links (URL won't change on click) -->
+    <nav class="main-nav" aria-label="On-page navigation">
+      <a href="/"
+         data-go="/"
+         data-scroll="call-to-unite">1. Building a Web Society — The Call to Unite</a>
+
+      <a href="/"
+         data-go="/"
+         data-scroll="web-reinvented">2. Reinventing the Web — Web of Objects</a>
+
+      <a href="/"
+         data-go="/"
+         data-scroll="objectives-actions">3. Objectives & Actions</a>
+
+      <a href="/"
+         data-go="/"
+         data-scroll="blog"
+         class="active">4. Blog</a>
     </nav>
   </div>
 
   <main class="blog-wrap">
-
-
     <div class="blog-kicker">Web of Objects Blog</div>
 
     <article class="blog-body tagline-style">
-
       <h1 class="blog-title">Reinventing the Web — Crazy or Inevitable?</h1>
 
       <p>It might sound big, unclear, or hard to imagine — I get that.</p>
@@ -214,47 +226,80 @@
 
       <p>Tim Berners-Lee, the creator of the World Wide Web, has said many times that today’s web is not what he hoped for.</p>
 
-	  <p>1️⃣ He wanted an open web that no single company could control.<br>
-	  But today, a few tech giants decide what we see and where our data is stored.</p>
+      <p>1️⃣ He wanted an open web that no single company could control.<br>
+      But today, a few tech giants decide what we see and where our data is stored.</p>
 
-	  <p>2️⃣ He never imagined the web would turn into a tool for surveillance.<br>
-	  It was not meant to track people, sell their data, or monitor their behavior.</p>
+      <p>2️⃣ He never imagined the web would turn into a tool for surveillance.<br>
+      It was not meant to track people, sell their data, or monitor their behavior.</p>
 
-	  <p>3️⃣ He pictured a place for real collaboration, not endless scrolling.<br>
-	  His first web browser let people read and edit pages. Now, the web is mostly “read-only.”</p>
+      <p>3️⃣ He pictured a place for real collaboration, not endless scrolling.<br>
+      His first web browser let people read and edit pages. Now, the web is mostly “read-only.”</p>
 
-	  <p>4️⃣ He didn’t expect misinformation and online hate to spread so easily.<br>
-	  This kind of negativity was never part of the plan.</p>
+      <p>4️⃣ He didn’t expect misinformation and online hate to spread so easily.<br>
+      This kind of negativity was never part of the plan.</p>
 
-	  <p>5️⃣ He didn’t think the web would become so commercial.<br>
-	  Ads, paywalls, and engagement tricks now shape most of the online world.</p>
+      <p>5️⃣ He didn’t think the web would become so commercial.<br>
+      Ads, paywalls, and engagement tricks now shape most of the online world.</p>
 
       <h2>Join the Movement</h2>
 
-	 <p>✨ So I dare you to be curious.</p>
+      <p>✨ So I dare you to be curious.</p>
+      <p>💡 Give our ideas a chance.</p>
 
-	  <p>💡 Give our ideas a chance.</p>
+      <a href="https://www.youtube.com/@webofobjects"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="yt-btn">
+        📺 <span>Subscribe to our YouTube channel</span>
+      </a>
 
-	<a href="https://www.youtube.com/@webofobjects"
-	   target="_blank"
-	   rel="noopener noreferrer"
-	   class="yt-btn">
-	  📺 <span>Subscribe to our YouTube channel</span>
-	</a>
+      <p>🫶 Share our message if you want to help.</p>
 
-	  <p>🫶 Share our message if you want to help.</p>
-
-	  <p>❤️ And one day, when people realize the web can be much more than pages, you will be able to say: “I was there at the beginning. I helped reinvent the Web”</p>
-
+      <p>❤️ And one day, when people realize the web can be much more than pages, you will be able to say: “I was there at the beginning. I helped reinvent the Web”</p>
     </article>
 
     <div class="back-link">
       <a href="/">← Back to home</a>
     </div>
-
   </main>
 
   <footer>© 2026 WEB SOCIETY. All rights reserved.</footer>
+
+  <!-- ✅ NEW: keep URL clean; if already on "/", scroll to section; otherwise go home without #hash -->
+  <script>
+    (function () {
+      const headerOffset = 0; // set to fixed header height if you add one
+
+      function scrollToId(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+
+        // optional a11y
+        el.setAttribute('tabindex', '-1');
+        el.focus({ preventScroll: true });
+      }
+
+      document.querySelectorAll('.main-nav a[data-scroll]').forEach(a => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const targetId = a.dataset.scroll;
+          const goPath = a.dataset.go || '/';
+
+          // If we're already on the homepage, just scroll.
+          // If not, navigate to homepage WITHOUT a hash.
+          if (window.location.pathname === goPath || window.location.pathname === goPath.replace(/\/$/, '')) {
+            scrollToId(targetId);
+          } else {
+            window.location.href = goPath;
+          }
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
