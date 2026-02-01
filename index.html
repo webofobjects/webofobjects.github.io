@@ -162,13 +162,23 @@
       .main-nav { font-weight: 400; }
     }
 
+	.hero{
+	  font-size: clamp(1.25rem, 4vw, 2.1rem);
+	  font-weight: 800;
+	  line-height: 1.2;
+	  max-width: 1200px;
+	  margin: 0.35rem auto 1.6rem auto; /* ⬅️ was 0.9rem, increase for more space */
+	  text-align: center;
+	  letter-spacing: -0.01em;
+	}
+
     .tagline {
       font-size: clamp(1.05rem, 3.4vw, 1.6rem);
       font-weight: 600;
       opacity: 0.9;
       max-width: 1200px;
       margin: 0 auto;
-      text-align: left;
+      text-align: left;   /* body left */
       line-height: 1.45;
     }
 
@@ -383,6 +393,7 @@
     @media (max-width: 420px) {
       .blog-link-btn { display: block; text-align: center; }
       .tagline { text-align: left; }
+      .hero { text-align: left; } /* optional: hero left on very small screens */
     }
 
     .uws-link-btn {
@@ -413,7 +424,7 @@
         inset 0 0 8px rgba(255, 255, 255, 0.12);
     }
 	
-	 #web-reinvented { margin-top: -1rem; }
+    #web-reinvented { margin-top: -1rem; }
   </style>
 </head>
 
@@ -425,13 +436,16 @@
     <a href="https://webofobjects.com">
       <img src="logo.png" alt="Web of Objects Home" />
     </a>
-
   </div>
 
   <section id="web-reinvented">
 
+    <!-- ✅ NEW: HERO H1 -->
+    <h1 class="hero">
+      💡 What if computers could organize information the way we think, not the way we file?
+    </h1>
+
     <p class="tagline">
-      💡 What if computers could organize information the way we think, not the way we file?<br><br>
       🔒 Today, every application invents its own way to represent data and traps it in files or databases. Closed ecosystems users don’t control, bound by rigid schemas and proprietary formats. As a result, information becomes fragmented, structure locks into place and stops evolving, and our ideas never truly connect.<br><br>
       🕸️ Web of Objects is a new computing layer that goes beyond files and folders, beyond links and pages, to create a living network of interconnected objects that mirrors how humans think.<br><br>
       ♾️ It offers a universal way to represent and connect information, structured or unstructured, personal or collective, within a single coherent environment.<br><br>
@@ -452,8 +466,6 @@
     </div>
   </section>
 
-
- 
   <footer>
     © 2026 WEB SOCIETY. All rights reserved.<br>
   </footer>
