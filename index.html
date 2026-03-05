@@ -167,7 +167,7 @@
       font-weight: 800;
       line-height: 1.2;
       max-width: 1200px;
-      margin: 0.35rem auto 2.2rem auto;
+      margin: 0.35rem auto 0rem auto;
       text-align: center;
       letter-spacing: -0.01em;
     }
@@ -429,6 +429,25 @@
     }
     
     #web-reinvented { margin-top: -1rem; }
+	
+/* ---------- HERO IMAGE ---------- */
+.hero-image-wrap{
+  max-width: 800px;   /* same as hero text */
+  width: 100%;
+  margin: 0.9rem auto 1.8rem auto;
+}
+
+.hero-image{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    0 0 30px rgba(77,168,255,0.10),
+    0 10px 30px rgba(0,0,0,0.45);
+}
+	
   </style>
 </head>
 
@@ -445,9 +464,18 @@
   <section id="web-reinvented">
 
     <h1 class="hero">
-      💡 What if the status quo in computing is the problem?
+      What if the status quo in computing is the problem?
     </h1>
-
+<div class="hero-image-wrap">
+<img
+  class="hero-image"
+  src="chaotic_desktop_optimized.webp"
+  alt="A chaotic computer desktop filled with cluttered files and apps"
+  loading="lazy"
+  decoding="async"
+  sizes="(max-width: 768px) 95vw, 720px"
+/>
+</div>
     <!-- ✅ SEO-friendly paragraph blocks -->
     <div class="tagline">
       <p>🧱 The software development stack is broken. Building an app is complex and time-consuming, requiring endless infrastructure: databases, APIs, authentication, servers, caching, queues, monitoring, scaling, security, and deployment. Most of this work has nothing to do with the product. It’s just plumbing. Notion exposed the problem. Vibe coding confirms it. People don’t want to build infrastructure. They just want to build tools fast.</p>
