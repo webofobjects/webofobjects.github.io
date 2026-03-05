@@ -22,9 +22,9 @@
   <meta property="og:description" content="The Web Reinvented as a High-Level Operating System — Beyond Files and Folders. Beyond Links and Pages.">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://webofobjects.com/">
-  <meta property="twitter:title" content="Web Of Objects — The Web Reinvented">
+  <meta property="twitter:title" content="Web of Objects — The Web Reinvented">
   <meta property="twitter:description" content="The Web Reinvented as a High-Level Operating System — Beyond Files and Folders. Beyond Links and Pages.">
-  <meta name="keywords" content="Web Of Objects, web reinvented, reinventing the web, computing layer, web society, web operating system, web OS, high-level operating system, universal data model, interconnected objects, AI and society, information architecture, post-file future">
+  <meta name="keywords" content="Web of Objects, computing layer, reinventing the web, web reinvented, agentic AI, high-level operating system, universal data model, interconnected objects, web society, AI and society, information architecture, information management">
 
   <script type="application/ld+json">
   {
@@ -162,25 +162,29 @@
       .main-nav { font-weight: 400; }
     }
 
-	.hero{
-	  font-size: clamp(1.25rem, 4vw, 2rem);
-	  font-weight: 800;
-	  line-height: 1.2;
-	  max-width: 1200px;
-	  margin: 0.35rem auto 2.2rem auto; /* ⬅️ was 0.9rem, increase for more space */
-	  text-align: center;
-	  letter-spacing: -0.01em;
-	}
+    .hero{
+      font-size: clamp(1.25rem, 4vw, 2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 1200px;
+      margin: 0.35rem auto 2.2rem auto;
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
 
+    /* NOTE: tagline is now a container (div) so we style paragraphs within */
     .tagline {
       font-size: clamp(1.05rem, 3.4vw, 1.6rem);
       font-weight: 600;
       opacity: 0.9;
       max-width: 1200px;
       margin: 0 auto;
-      text-align: left;   /* body left */
+      text-align: left;
       line-height: 1.45;
     }
+
+    .tagline p { margin: 0 0 1.15rem 0; }
+    .tagline p:last-child { margin-bottom: 0; }
 
     /* ---------- GRID SYSTEM ---------- */
     .button-grid {
@@ -393,7 +397,7 @@
     @media (max-width: 420px) {
       .blog-link-btn { display: block; text-align: center; }
       .tagline { text-align: left; }
-      .hero { text-align: left; } /* optional: hero left on very small screens */
+      .hero { text-align: left; }
     }
 
     .uws-link-btn {
@@ -423,7 +427,7 @@
         0 0 18px rgba(77, 168, 255, 0.4),
         inset 0 0 8px rgba(255, 255, 255, 0.12);
     }
-	
+    
     #web-reinvented { margin-top: -1rem; }
   </style>
 </head>
@@ -440,34 +444,34 @@
 
   <section id="web-reinvented">
 
-    <!-- ✅ NEW: HERO H1 -->
     <h1 class="hero">
       💡 What if the status quo in computing is the problem?
     </h1>
 
-    <p class="tagline">
-🧱 The software development stack is broken. Building an app is complex and time-consuming, requiring endless infrastructure: databases, APIs, authentication, servers, caching, queues, monitoring, scaling, security, and deployment. Most of this work has nothing to do with the product. It’s just plumbing. Notion exposed the problem. Vibe coding confirms it. People don’t want to build infrastructure. They just want to build tools fast.<br><br>
+    <!-- ✅ SEO-friendly paragraph blocks -->
+    <div class="tagline">
+      <p>🧱 The software development stack is broken. Building an app is complex and time-consuming, requiring endless infrastructure: databases, APIs, authentication, servers, caching, queues, monitoring, scaling, security, and deployment. Most of this work has nothing to do with the product. It’s just plumbing. Notion exposed the problem. Vibe coding confirms it. People don’t want to build infrastructure. They just want to build tools fast.</p>
 
-🔒 This isn’t just a developer problem. It’s a fundamental flaw in modern computing itself. Every application invents its own way of representing data, then traps that data inside closed ecosystems users don’t control: proprietary files, isolated databases, or cloud systems scattered across continents that even the developers themselves don’t own. As a result, information becomes fragmented, structures lock into place and stop evolving, and our ideas can’t truly connect. Instead of shaping our tools, we’re forced to adapt to them.<br><br>
+      <p>🔒 This isn’t just a developer problem. It’s a fundamental flaw in modern computing itself. Every application invents its own way of representing data, then traps that data inside closed ecosystems users don’t control: proprietary files, isolated databases, or cloud systems scattered across continents that even the developers themselves don’t own. As a result, information becomes fragmented, structures lock into place and stop evolving, and our ideas can’t truly connect. Instead of shaping our tools, we’re forced to adapt to them.</p>
 
-🌐 Introducing Web of Objects — the web reinvented as a high-level operating system.<br><br>
+      <p>🌐 Introducing Web of Objects — the web reinvented as a high-level operating system.</p>
 
-🕸️ Web of Objects is a new computing layer that absorbs the complexity of the software development stack. It goes beyond files and folders, beyond links and pages, and beyond isolated apps to create a living network of interconnected objects that mirrors how humans think and work.<br><br>
+      <p>🕸️ Web of Objects is a new computing layer that absorbs the complexity of the software development stack. It goes beyond files and folders, beyond links and pages, and beyond isolated apps to create a living network of interconnected objects that mirrors how humans think and work.</p>
 
-♾️ It offers a universal way to represent and connect information—structured or unstructured, personal or collective—within a single coherent environment. It creates a system where metadata and code themselves are part of the data, allowing developers to create and evolve applications as naturally as users browse and interact with information, blurring the line between building software and using it.<br><br>
+      <p>♾️ It offers a universal way to represent and connect information—structured or unstructured, personal or collective—within a single coherent environment. It creates a system where metadata and code themselves are part of the data, allowing developers to create and evolve applications as naturally as users browse and interact with information, blurring the line between building software and using it.</p>
 
-🛡️ Web of Objects is designed for privacy and control, giving individuals and organizations full sovereignty over their data. Data can be stored on their own servers or with any cloud provider, and moved freely between providers at any time—as easily as moving a file from one folder to another.<br><br>
+      <p>🛡️ Web of Objects is designed for privacy and control, giving individuals and organizations full sovereignty over their data. Data can be stored on their own servers or with any cloud provider, and moved freely between providers at any time—as easily as moving a file from one folder to another.</p>
 
-🤖 This architecture also unlocks truly agentic AI systems. Large language models are powerful, but without semantically rich, structured data they remain context-blind—forced to guess meaning from fragments of text. The Web of Objects changes this by embedding meaning, relationships, and behavior directly into the data itself. When information exists as interconnected objects with explicit structure and metadata, AI agents can understand the environments they operate in and act within them. Instead of merely generating text, they can interact with the underlying objects—creating, modifying, and connecting them to build and evolve applications like developers do.<br><br>
+      <p>🤖 This architecture also unlocks truly agentic AI systems. Large language models are powerful, but without semantically rich, structured data they remain context-blind—forced to guess meaning from fragments of text. The Web of Objects changes this by embedding meaning, relationships, and behavior directly into the data itself. When information exists as interconnected objects with explicit structure and metadata, AI agents can understand the environments they operate in and act within them. Instead of merely generating text, they can interact with the underlying objects—creating, modifying, and connecting them to build and evolve applications like developers do.</p>
 
-🪐 On top of this emerges a new space on the Internet: the <a href="https://webverse.global" class="uws-link-btn" target="_blank" rel="noopener">webverse</a>, where web pages become objects, websites become worlds, and the World Wide Web becomes a universe.<br><br>
+      <p>🪐 On top of this emerges a new space on the Internet: the <a href="https://webverse.global" class="uws-link-btn" target="_blank" rel="noopener">webverse</a>, where web pages become objects, websites become worlds, and the World Wide Web becomes a universe.</p>
 
-⚠️ But technology alone isn’t enough. The AI revolution shows that innovation can advance humanity while also displacing people—not because technology is harmful, but because profit-driven systems use it to cut costs instead of lifting everyone.<br><br>
+      <p>⚠️ But technology alone isn’t enough. The AI revolution shows that innovation can advance humanity while also displacing people—not because technology is harmful, but because profit-driven systems use it to cut costs instead of lifting everyone.</p>
 
-🌍 We need a new way to think about the future. A <a href="https://websociety.global" class="uws-link-btn" target="_blank" rel="noopener">web society</a> that unites people across borders and cultures, where technology serves humanity and business is shaped for shared progress, not just profit.<br><br>
+      <p>🌍 We need a new way to think about the future. A <a href="https://websociety.global" class="uws-link-btn" target="_blank" rel="noopener">web society</a> that unites people across borders and cultures, where technology serves humanity and business is shaped for shared progress, not just profit.</p>
 
-🫶 Join our rebellion. Because when humanity unites, the status quo doesn’t stand a chance.
-    </p>
+      <p>🫶 Join our rebellion. Because when humanity unites, the status quo doesn’t stand a chance.</p>
+    </div>
 
     <div class="button-grid">
       <a class="btn youtube" href="https://www.youtube.com/@webofobjects" target="_blank" rel="noopener">YouTube</a>
