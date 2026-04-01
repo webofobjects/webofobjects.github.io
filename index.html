@@ -52,15 +52,11 @@
 
       --youtube: #ff0000;
       --facebook: #1877f2;
-      --reddit: #ff4500;
       --x: #000000;
       --instagram: #e1306c;
       --linkedin: #0a66c2;
 
       --tiktok: #010101;
-      --discord: #5865F2;
-      --telegram: #229ED9;
-      --whatsapp: #25D366;
       --threads: #000000;
 
       --radius: 999px;
@@ -84,7 +80,6 @@
       word-break: break-word;
     }
 
-    /* --- Canvas particle background --- */
     #bg-canvas {
       position: fixed;
       inset: 0;
@@ -95,9 +90,6 @@
       opacity: 0.9;
     }
 
-    #call-to-unite { margin-top: -1.2rem; }
-
-    /* ---------- LOGO + MENU ---------- */
     .logo-top {
       display: flex;
       justify-content: center;
@@ -135,7 +127,7 @@
       white-space: normal;
       line-height: 1.25;
       font-weight: 600;
-      cursor: pointer; /* because we removed href */
+      cursor: pointer;
     }
 
     .main-nav a:hover {
@@ -161,7 +153,6 @@
       letter-spacing: -0.01em;
     }
 
-    /* NOTE: tagline is now a container (div) so we style paragraphs within */
     .tagline {
       font-size: clamp(1.05rem, 3.4vw, 1.6rem);
       font-weight: 600;
@@ -175,7 +166,6 @@
     .tagline p { margin: 0 0 1.15rem 0; }
     .tagline p:last-child { margin-bottom: 0; }
 
-    /* ---------- GRID SYSTEM ---------- */
     .button-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -222,14 +212,10 @@
 
     .youtube  { background: var(--youtube); }
     .facebook { background: var(--facebook); }
-    .reddit   { background: var(--reddit); }
     .x        { background: var(--x); border: 1px solid #444; }
     .instagram{ background: var(--instagram); }
     .linkedin { background: var(--linkedin); }
     .tiktok   { background: var(--tiktok); border: 1px solid #333; }
-    .discord  { background: var(--discord); }
-    .telegram { background: var(--telegram); }
-    .whatsapp { background: var(--whatsapp); }
     .threads  { background: var(--threads); border: 1px solid #444; }
 
     footer {
@@ -241,158 +227,6 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-    }
-
-    /* ---------- PHASE BAR ---------- */
-    .phase-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 1rem 0 1rem;
-      width: 100%;
-      gap: 0.8rem;
-    }
-
-    .phase-line {
-      flex: 1;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.35);
-      min-width: 24px;
-    }
-
-    .phase-text {
-      margin: 0;
-      font-size: clamp(0.95rem, 3.6vw, 1.3rem);
-      font-weight: 600;
-      color: #ffffff;
-      white-space: normal;
-      line-height: 1.25;
-      text-align: center;
-    }
-
-    .video-normal {
-      margin: 0 auto 1.5rem auto;
-      max-width: 1150px;
-      width: 100%;
-    }
-
-    .video-normal iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      height: auto;
-      border: none;
-      border-radius: 14px;
-    }
-
-    /* ---------- BLOG PREVIEW SECTION ---------- */
-    .blog-section {
-      max-width: 1200px;
-      margin: 2.5rem auto 0 auto;
-      text-align: left;
-    }
-
-    .blog-section-title {
-      font-size: clamp(1.4rem, 3vw, 1.8rem);
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    .blog-section-subtitle {
-      font-size: 0.98rem;
-      opacity: 0.8;
-      margin-bottom: 1.6rem;
-      max-width: 700px;
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.2rem;
-    }
-
-    @media (max-width: 900px) {
-      .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 600px) {
-      .blog-grid { grid-template-columns: 1fr; }
-    }
-
-    .blog-card {
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: radial-gradient(circle at top left, rgba(255,255,255,0.08), rgba(0,0,0,0.9));
-      padding: 1rem 1.1rem 1.2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-    }
-
-    .blog-meta {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0.6;
-    }
-
-    .blog-card-title {
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .blog-card-excerpt {
-      font-size: 0.9rem;
-      opacity: 0.85;
-    }
-
-    .blog-card {
-      text-decoration: none;
-      color: var(--text);
-      cursor: pointer;
-    }
-
-    .blog-card:hover {
-      background: radial-gradient(circle at top left, rgba(255,255,255,0.12), rgba(0,0,0,0.9));
-      border-color: rgba(255,255,255,0.28);
-    }
-
-    .blog-card-img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin-bottom: 0.3rem;
-    }
-
-    /* ---------- BLOG LINKS ---------- */
-    .blog-links {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    .blog-link-row { margin-bottom: 0.9rem; }
-
-    .blog-link-btn {
-      display: inline-block;
-      padding: 0.55rem 1rem;
-      border-radius: 999px;
-      color: var(--text);
-      font-weight: 600;
-      text-decoration: none;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.18);
-      transition: 0.15s;
-      max-width: 100%;
-    }
-
-    .blog-link-btn:hover {
-      transform: translateX(4px);
-      background: rgba(255,255,255,0.12);
-    }
-
-    @media (max-width: 420px) {
-      .blog-link-btn { display: block; text-align: center; }
-      .tagline { text-align: left; }
     }
 
     .uws-link-btn {
@@ -425,9 +259,8 @@
     
     #web-reinvented { margin-top: -1rem; }
 	
-/* ---------- HERO IMAGE ---------- */
 .hero-image-wrap{
-  max-width: 850px;   /* same as hero text */
+  max-width: 850px;
   width: 100%;
   margin: 0.9rem auto 1.8rem auto;
 }
@@ -447,7 +280,6 @@
 </head>
 
 <body>
-  <!-- Particle web background -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <div class="logo-top">
@@ -476,7 +308,6 @@ What if the web did the same for infrastructure?
   sizes="(max-width: 768px) 95vw, 720px"
 />
 </div>
-    <!-- ✅ SEO-friendly paragraph blocks -->
     <div class="tagline">
 	<p>🧱 The software development stack is broken. Building an app is complex and time-consuming, requiring endless infrastructure: databases, APIs, authentication, servers, caching, queues, monitoring, scaling, security, and deployment. Most of this work has nothing to do with the product — it’s just plumbing. Notion exposed the problem. Vibe coding confirms it. People don’t want to build infrastructure. They just want to build tools fast.</p>
 
@@ -516,36 +347,6 @@ What if the web did the same for infrastructure?
     © 2026 WEB SOCIETY. All rights reserved.<br>
   </footer>
 
-  <!-- ✅ NEW: hash-less smooth scrolling for your menu -->
-  <script>
-    (function () {
-      const headerOffset = 0; // set to your fixed header height if you add one
-      const links = document.querySelectorAll('.main-nav a[data-scroll]');
-
-      function scrollToId(id) {
-        const el = document.getElementById(id);
-        if (!el) return;
-
-        // offset-friendly smooth scroll (works better than scrollIntoView if you ever add a sticky header)
-        const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-
-        window.scrollTo({ top: y, behavior: 'smooth' });
-
-        // optional: accessibility - move focus without scrolling again
-        el.setAttribute('tabindex', '-1');
-        el.focus({ preventScroll: true });
-      }
-
-      links.forEach(a => {
-        a.addEventListener('click', (e) => {
-          e.preventDefault();          // prevents URL changing
-          scrollToId(a.dataset.scroll);
-        });
-      });
-    })();
-  </script>
-
-  <!-- Particle Web Background Script -->
   <script>
   (() => {
     const canvas = document.getElementById("bg-canvas");
