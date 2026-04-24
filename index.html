@@ -90,12 +90,22 @@
       opacity: 0.9;
     }
 
+    .site-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.45rem;
+      width: 100%;
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
     .logo-top {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: -.5rem;
-	  margin-bottom: -0.2rem
+      margin-bottom: -0.2rem;
     }
 
     .logo-top img {
@@ -110,7 +120,7 @@
       align-items: center;
       gap: 0.5rem;
       font-size: 0.95rem;
-      margin-bottom: 1.5rem;
+      margin: 0;
     }
 
     .main-nav a {
@@ -133,6 +143,26 @@
     .main-nav a:hover {
       transform: translateX(4px);
       background: rgba(255,255,255,0.12);
+    }
+
+    @media (min-width: 701px) {
+      .site-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .logo-top {
+        margin-bottom: 0;
+      }
+
+      .main-nav {
+        align-items: stretch;
+      }
+
+      .main-nav a {
+        width: clamp(150px, 13vw, 190px);
+      }
     }
 
     @media (max-width: 700px) {
@@ -258,81 +288,85 @@
     }
     
     #web-reinvented { margin-top: -1rem; }
-	
-.hero-image-wrap{
-  max-width: 850px;
-  width: 100%;
-  margin: 0.9rem auto 1.8rem auto;
-}
 
-.hero-image{
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow:
-    0 0 30px rgba(77,168,255,0.10),
-    0 10px 30px rgba(0,0,0,0.45);
-}
-	
+    .hero-image-wrap{
+      max-width: 850px;
+      width: 100%;
+      margin: 0.9rem auto 1.8rem auto;
+    }
+
+    .hero-image{
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow:
+        0 0 30px rgba(77,168,255,0.10),
+        0 10px 30px rgba(0,0,0,0.45);
+    }
   </style>
 </head>
 
 <body>
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-  <div class="logo-top">
-    <a href="https://webofobjects.com">
-      <img src="logo.png" alt="Web of Objects" />
-    </a>
-  </div>
-  <nav class="main-nav">
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
-	<a href="https://websociety.one">Web Society</a>
-	<a href="https://webverse.space">Webverse</a>
-  </nav>
+  <header class="site-header">
+    <div class="logo-top">
+      <a href="https://webofobjects.com">
+        <img src="logo.png" alt="Web of Objects" />
+      </a>
+    </div>
+
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="https://websociety.one">Web Society</a>
+      <a href="https://webverse.space">Webverse</a>
+    </nav>
+  </header>
 
   <section id="web-reinvented">
 
-<h1 class="hero">
-The Missing Computing Layer
-</h1>
-<div class="hero-image-wrap">
-<img
-  class="hero-image"
-  src="web_of_objects.jpg"
-  alt="The Web as an Operating System"
-  loading="lazy"
-  decoding="async"
-  sizes="(max-width: 768px) 95vw, 720px"
-/>
-</div>
+    <h1 class="hero">
+      The Missing Computing Layer
+    </h1>
+
+    <div class="hero-image-wrap">
+      <img
+        class="hero-image"
+        src="web_of_objects.jpg"
+        alt="The Web as an Operating System"
+        loading="lazy"
+        decoding="async"
+        sizes="(max-width: 768px) 95vw, 720px"
+      />
+    </div>
+
     <div class="tagline">
-	<p>🧱 The software development stack is broken. Building an app is complex and time-consuming, requiring endless infrastructure: databases, APIs, authentication, servers, caching, queues, monitoring, scaling, security, and deployment. Most of this work has nothing to do with the product — it’s just plumbing. Notion exposed the problem. Vibe coding confirms it. People don’t want to build infrastructure. They just want to build tools fast.</p>
+      <p>🧱 The software development stack is broken. Building an app is complex and time-consuming, requiring endless infrastructure: databases, APIs, authentication, servers, caching, queues, monitoring, scaling, security, and deployment. Most of this work has nothing to do with the product — it’s just plumbing. Notion exposed the problem. Vibe coding confirms it. People don’t want to build infrastructure. They just want to build tools fast.</p>
 
-	<p>🔒 But this isn’t just a developer problem. It reveals a deeper flaw in modern computing: its rigidity. Every application invents its own way of representing data, then traps that data inside closed ecosystems users don’t control — proprietary files, isolated databases, or cloud systems scattered across continents that even the developers themselves don’t own. As a result, information becomes fragmented, structures lock into place and stop evolving, and our ideas can’t truly connect. Instead of shaping our tools, we’re forced to adapt to them.</p>
-	
-	<p>🧩 This is exactly why there is no perfect productivity tool. Every app is built on top of this fragmented and rigid foundation, forcing early, irreversible tradeoffs: how data is structured, how workflows behave, what can be customized, and what remains fixed. These constraints prevent tools from truly adapting to how people think or evolving alongside changing needs. Instead of living systems, we get static products — each solving a narrow slice of productivity while introducing new limitations elsewhere. The problem isn’t just poor design; it’s that the underlying architecture makes true flexibility, interoperability, and user ownership fundamentally out of reach.</p>
+      <p>🔒 But this isn’t just a developer problem. It reveals a deeper flaw in modern computing: its rigidity. Every application invents its own way of representing data, then traps that data inside closed ecosystems users don’t control — proprietary files, isolated databases, or cloud systems scattered across continents that even the developers themselves don’t own. As a result, information becomes fragmented, structures lock into place and stop evolving, and our ideas can’t truly connect. Instead of shaping our tools, we’re forced to adapt to them.</p>
+      
+      <p>🧩 This is exactly why there is no perfect productivity tool. Every app is built on top of this fragmented and rigid foundation, forcing early, irreversible tradeoffs: how data is structured, how workflows behave, what can be customized, and what remains fixed. These constraints prevent tools from truly adapting to how people think or evolving alongside changing needs. Instead of living systems, we get static products — each solving a narrow slice of productivity while introducing new limitations elsewhere. The problem isn’t just poor design; it’s that the underlying architecture makes true flexibility, interoperability, and user ownership fundamentally out of reach.</p>
 
-	<p>🌐 That’s why we’re inventing and building a new kind of web — a high-level operating system for humans and AI agents. We call it the Web of Objects.</p>
+      <p>🌐 That’s why we’re inventing and building a new kind of web — a high-level operating system for humans and AI agents. We call it the Web of Objects.</p>
 
-	<p>🕸️ Web of Objects is a new computing layer that absorbs the software stack by making infrastructure a built-in property of the web itself. It goes beyond files and folders, beyond links and pages, and beyond isolated apps to create a living network of interconnected objects that mirrors how humans think and work.</p>
+      <p>🕸️ Web of Objects is a new computing layer that absorbs the software stack by making infrastructure a built-in property of the web itself. It goes beyond files and folders, beyond links and pages, and beyond isolated apps to create a living network of interconnected objects that mirrors how humans think and work.</p>
 
-	<p>♾️ It provides a universal way to represent and connect information — structured or unstructured, personal or collective — within a single coherent environment.</p>
+      <p>♾️ It provides a universal way to represent and connect information — structured or unstructured, personal or collective — within a single coherent environment.</p>
 
-	<p>🛡️ Across Europe, organizations, including those in Germany, France, Denmark, the Netherlands, and Sweden, are moving away from Microsoft 365 to regain control of their data, improve regulatory compliance, and reduce vendor lock-in. This reflects a broader push for digital sovereignty and long-term independence. Web of Objects is designed for privacy and control, giving individuals and organizations full sovereignty over their data. Data can live on their own servers or with any cloud provider — and move freely between providers at any time, as easily as moving a file between folders.</p>
+      <p>🛡️ Across Europe, organizations, including those in Germany, France, Denmark, the Netherlands, and Sweden, are moving away from Microsoft 365 to regain control of their data, improve regulatory compliance, and reduce vendor lock-in. This reflects a broader push for digital sovereignty and long-term independence. Web of Objects is designed for privacy and control, giving individuals and organizations full sovereignty over their data. Data can live on their own servers or with any cloud provider — and move freely between providers at any time, as easily as moving a file between folders.</p>
 
-	<p>🤖 This architecture also unlocks unified agentic AI systems. Large language models can follow schemas and use tool protocols — but they still lack a shared, semantically rich environment to operate in. Most information lives in fragmented apps, files, and databases where meaning, relationships, permissions, and behavior remain implicit. Web of Objects changes this by making structure native: information exists as interconnected objects with identity, metadata, links, and rules built in. </p>
+      <p>🤖 This architecture also unlocks unified agentic AI systems. Large language models can follow schemas and use tool protocols — but they still lack a shared, semantically rich environment to operate in. Most information lives in fragmented apps, files, and databases where meaning, relationships, permissions, and behavior remain implicit. Web of Objects changes this by making structure native: information exists as interconnected objects with identity, metadata, links, and rules built in.</p>
 
-	<p>🪐 On top of Web of Objects emerges a new space on the Internet: the <a href="https://webverse.space" class="uws-link-btn" target="_blank" rel="noopener">webverse</a>, where web pages become objects, websites become worlds, and the World Wide Web becomes a universe.</p>
+      <p>🪐 On top of Web of Objects emerges a new space on the Internet: the <a href="https://webverse.space" class="uws-link-btn" target="_blank" rel="noopener">webverse</a>, where web pages become objects, websites become worlds, and the World Wide Web becomes a universe.</p>
 
-	<p>⚠️ But technology alone isn’t enough. The AI revolution shows that innovation can advance humanity while also displacing people — not because technology is harmful, but because profit-driven systems use it to cut costs instead of lifting everyone.</p>
+      <p>⚠️ But technology alone isn’t enough. The AI revolution shows that innovation can advance humanity while also displacing people — not because technology is harmful, but because profit-driven systems use it to cut costs instead of lifting everyone.</p>
 
-	<p>🌍 We need a new way to think about the future. A <a href="https://websociety.one" class="uws-link-btn" target="_blank" rel="noopener">web society</a> that unites people across borders and cultures, where technology serves humanity and business is shaped for shared progress — not just profit.</p>
+      <p>🌍 We need a new way to think about the future. A <a href="https://websociety.one" class="uws-link-btn" target="_blank" rel="noopener">web society</a> that unites people across borders and cultures, where technology serves humanity and business is shaped for shared progress — not just profit.</p>
 
-	<p>🫶 Join our rebellion. Because when humanity unites, the status quo doesn’t stand a chance.</p>
+      <p>🫶 Join our rebellion. Because when humanity unites, the status quo doesn’t stand a chance.</p>
     </div>
 
     <div class="button-grid">
@@ -355,7 +389,6 @@ The Missing Computing Layer
     const canvas = document.getElementById("bg-canvas");
     const ctx = canvas.getContext("2d", { alpha: true });
 
-    // ---- Tweakables ----
     const CFG = {
       density: 0.00008,
       maxParticles: 140,
@@ -370,7 +403,6 @@ The Missing Computing Layer
       dotAlpha: 0.55
     };
 
-    // Mobile performance tuning (small screens + typically weaker GPUs)
     const vw = Math.min(window.innerWidth || 0, window.innerHeight || 0);
     if (vw && vw < 420) {
       CFG.maxParticles = 85;
@@ -470,7 +502,6 @@ The Missing Computing Layer
       requestAnimationFrame(step);
     }
 
-    // Mouse + touch tracking
     window.addEventListener("mousemove", (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
@@ -488,7 +519,6 @@ The Missing Computing Layer
     }, { passive: true });
     window.addEventListener("touchend", () => { mouse.active = false; }, { passive: true });
 
-    // Reduce motion accessibility
     const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
       CFG.speed = 0.12;
