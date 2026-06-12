@@ -92,16 +92,22 @@
       text-align: center;
       width: min(230px, 55vw);
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.04);
-      transition: 0.15s;
+      border: 1px solid rgba(77, 168, 255, 0.5);
+      background: rgba(77, 168, 255, 0.18);
+      box-shadow:
+        0 0 10px rgba(77, 168, 255, 0.22),
+        inset 0 0 6px rgba(255, 255, 255, 0.08);
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
       white-space: normal;
       line-height: 1.25;
     }
 
     .main-nav a:hover {
-      transform: translateX(4px);
-      background: rgba(255,255,255,0.12);
+      transform: translateY(-1px);
+      background: rgba(77, 168, 255, 0.32);
+      box-shadow:
+        0 0 18px rgba(77, 168, 255, 0.4),
+        inset 0 0 8px rgba(255, 255, 255, 0.12);
     }
 
     @media (min-width: 701px) {
