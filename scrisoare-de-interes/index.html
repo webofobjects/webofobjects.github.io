@@ -656,14 +656,14 @@
 
           <div class="preview-meta">
             <p><strong>Data:</strong> <span class="preview-value" id="preview-date">[data]</span></p>
-            <p><strong>Către:</strong> Web Society S.R.L.<br><strong>În atenția:</strong> George-Valentin Marin, Asociat</p>
+            <p><strong>Către:</strong> George-Valentin Marin<br><strong>Calitate:</strong> Inițiator al proiectului Web of Objects și fondator al Web Society S.R.L. — societate în curs de constituire</p>
             <p><strong>Subiect:</strong> Exprimarea interesului pentru soluția Web of Objects</p>
           </div>
 
           <div class="preview-body">
             <p>Stimată doamnă/Stimate domn,</p>
 
-            <p>Prin prezenta, <span class="preview-value" id="preview-company">[denumirea companiei]</span>, CUI <span class="preview-value" id="preview-cui">[CUI]</span>, confirmă interesul față de proiectul <strong>Web of Objects — WoO</strong>, dezvoltat de Web Society S.R.L.</p>
+            <p>Prin prezenta, <span class="preview-value" id="preview-company">[denumirea companiei]</span>, CUI <span class="preview-value" id="preview-cui">[CUI]</span>, confirmă interesul față de proiectul <strong>Web of Objects — WoO</strong>, inițiat de George-Valentin Marin și care urmează să fie dezvoltat și comercializat prin Web Society S.R.L., după înmatricularea societății.</p>
 
             <p>Reprezentanților companiei noastre le-a fost prezentată platforma Web of Objects, o platformă software generală pentru construirea și operarea aplicațiilor, care furnizează o infrastructură comună și un cadru software pentru realizarea stratului de prezentare și a stratului de business. Platforma urmărește reducerea complexității dezvoltării software, creșterea interoperabilității dintre aplicații și realizarea unor soluții mai ușor de adaptat la nevoile utilizatorilor.</p>
 
@@ -671,7 +671,7 @@
 
             <p>Prin selectarea opțiunilor de mai sus, compania noastră confirmă relevanța acestora și își exprimă interesul pentru o prezentare sau demonstrație Web of Objects și, după caz, pentru participarea la un proiect-pilot și evaluarea unei viitoare oferte comerciale.</p>
 
-            <p>Suntem de acord ca această scrisoare să fie utilizată de Web Society S.R.L. în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects, ca dovadă a existenței problemei și a interesului de evaluare, testare sau adopție a soluției, cu respectarea informațiilor declarate confidențiale de compania noastră.</p>
+            <p>Suntem de acord ca această scrisoare să fie utilizată de George-Valentin Marin pentru pregătirea proiectului și, după înmatriculare, de Web Society S.R.L. în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects, ca dovadă a existenței problemei și a interesului de evaluare, testare sau adopție a soluției, cu respectarea informațiilor declarate confidențiale de compania noastră.</p>
 
             <p>Prezenta scrisoare exprimă un interes real pentru continuarea evaluării soluției, fără a constitui un contract, o comandă fermă sau o obligație necondiționată de cumpărare.</p>
 
@@ -693,7 +693,7 @@
         <div class="agreement">
           <label class="choice">
             <input id="agreement" type="checkbox" name="agreement" required>
-            <span>Declar că am calitatea necesară pentru a exprima interesul companiei și confirm corectitudinea informațiilor completate. Sunt de acord cu utilizarea scrisorii în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects și înțeleg caracterul neangajant al acesteia.</span>
+            <span>Declar că am calitatea necesară pentru a exprima interesul companiei și confirm corectitudinea informațiilor completate. Sunt de acord ca scrisoarea să fie utilizată de George-Valentin Marin pentru pregătirea proiectului și, după înmatriculare, de Web Society S.R.L. în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects. Înțeleg caracterul neangajant al scrisorii.</span>
           </label>
         </div>
 
@@ -714,7 +714,7 @@
     </noscript>
   </main>
 
-  <footer>© 2026 Web Society S.R.L. · Web of Objects</footer>
+  <footer>© 2026 Proiectul Web of Objects</footer>
 
   <script>
   (() => {
@@ -1035,7 +1035,7 @@
           context.stroke();
           context.font = "400 18px Arial, sans-serif";
           context.fillStyle = "#7a8495";
-          context.fillText("Web Society S.R.L. · Web of Objects", this.marginX, this.height - 55);
+          context.fillText("Proiectul Web of Objects", this.marginX, this.height - 55);
           const pageText = `Pagina ${index + 1} / ${this.pages.length}`;
           const pageWidth = context.measureText(pageText).width;
           context.fillText(pageText, this.width - this.marginX - pageWidth, this.height - 55);
@@ -1128,12 +1128,12 @@
 
       const documentRenderer = new LetterDocument(logo);
       documentRenderer.firstPageHeader(data.date);
-      documentRenderer.paragraph("Către: Web Society S.R.L.", { weight: 700, gap: 6 });
-      documentRenderer.paragraph("În atenția: George-Valentin Marin, Asociat", { gap: 18 });
+      documentRenderer.paragraph("Către: George-Valentin Marin", { weight: 700, gap: 6 });
+      documentRenderer.paragraph("Calitate: Inițiator al proiectului Web of Objects și fondator al Web Society S.R.L. — societate în curs de constituire", { gap: 18 });
       documentRenderer.paragraph("Subiect: Exprimarea interesului pentru soluția Web of Objects", { weight: 700, gap: 26 });
       documentRenderer.paragraph("Stimată doamnă/Stimate domn,", { gap: 20 });
       documentRenderer.paragraph(
-        `Prin prezenta, ${data.companyName}, CUI ${data.companyCui}, confirmă interesul față de proiectul Web of Objects — WoO, dezvoltat de Web Society S.R.L.`
+        `Prin prezenta, ${data.companyName}, CUI ${data.companyCui}, confirmă interesul față de proiectul Web of Objects — WoO, inițiat de George-Valentin Marin și care urmează să fie dezvoltat și comercializat prin Web Society S.R.L., după înmatricularea societății.`
       );
       documentRenderer.paragraph(
         "Reprezentanților companiei noastre le-a fost prezentată platforma Web of Objects, o platformă software generală pentru construirea și operarea aplicațiilor, care furnizează o infrastructură comună și un cadru software pentru realizarea stratului de prezentare și a stratului de business. Platforma urmărește reducerea complexității dezvoltării software, creșterea interoperabilității dintre aplicații și realizarea unor soluții mai ușor de adaptat la nevoile utilizatorilor."
@@ -1151,7 +1151,7 @@
         "Prin selectarea opțiunilor de mai sus, compania noastră confirmă relevanța acestora și își exprimă interesul pentru o prezentare sau demonstrație Web of Objects și, după caz, pentru participarea la un proiect-pilot și evaluarea unei viitoare oferte comerciale."
       );
       documentRenderer.paragraph(
-        "Suntem de acord ca această scrisoare să fie utilizată de Web Society S.R.L. în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects, ca dovadă a existenței problemei și a interesului de evaluare, testare sau adopție a soluției, cu respectarea informațiilor declarate confidențiale de compania noastră."
+        "Suntem de acord ca această scrisoare să fie utilizată de George-Valentin Marin pentru pregătirea proiectului și, după înmatriculare, de Web Society S.R.L. în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects, ca dovadă a existenței problemei și a interesului de evaluare, testare sau adopție a soluției, cu respectarea informațiilor declarate confidențiale de compania noastră."
       );
       documentRenderer.paragraph(
         "Prezenta scrisoare exprimă un interes real pentru continuarea evaluării soluției, fără a constitui un contract, o comandă fermă sau o obligație necondiționată de cumpărare."
