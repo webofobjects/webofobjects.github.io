@@ -938,6 +938,7 @@
         const lines = this.wrap(text, options.width || this.usableWidth());
         const height = lines.length * lineHeight + gap;
         this.ensureSpace(height);
+        this.setFont(size, weight);
         this.context.fillStyle = color;
         lines.forEach(line => {
           this.context.fillText(line, options.x || this.marginX, this.y);
@@ -967,6 +968,7 @@
         const lineHeight = 34;
         const height = Math.max(box, lines.length * lineHeight) + 14;
         this.ensureSpace(height);
+        this.setFont(23, 400);
         this.context.fillStyle = "#ff7a18";
         this.context.beginPath();
         this.context.roundRect(left, this.y + 2, box, box, 6);
