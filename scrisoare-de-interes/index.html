@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scrisoare de interes — Web of Objects</title>
+  <meta name="description" content="Generați și semnați local o scrisoare de interes pentru Web of Objects.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://webofobjects.com/scrisoare-de-interes/">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #05070a;
+      --surface: rgba(15, 20, 28, 0.92);
+      --surface-2: #141b24;
+      --line: rgba(124, 175, 232, 0.24);
+      --line-strong: rgba(124, 175, 232, 0.52);
+      --text: #f7f9fc;
+      --muted: #aeb9c8;
+      --accent: #ff7a18;
+      --accent-2: #4da8ff;
+      --success: #4ee29a;
+      --danger: #ff7b7b;
+      --radius: 18px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+      --content: 920px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 14% 3%, rgba(77, 168, 255, 0.15), transparent 28rem),
+        radial-gradient(circle at 88% 12%, rgba(255, 122, 24, 0.10), transparent 26rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+
+    .site-header {
+      width: min(var(--content), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.25rem 0 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 18px rgba(255, 122, 24, 0.22));
+    }
+
+    .back-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.55rem 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      color: var(--text);
+      border-color: var(--line-strong);
+      outline: none;
+    }
+
+    main {
+      width: min(var(--content), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1rem 0 4rem;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 1.6rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.65rem;
+      color: #b9dcff;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 14px rgba(78, 226, 154, 0.75);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5.2vw, 3.7rem);
+      line-height: 1.04;
+      letter-spacing: -0.055em;
+    }
+
+    .intro p {
+      margin: 1rem auto 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.4vw, 1.12rem);
+      max-width: 680px;
+    }
+
+    .privacy-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin: 1.4rem 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(78, 226, 154, 0.25);
+      background: rgba(78, 226, 154, 0.06);
+      border-radius: 14px;
+      color: #d7f8e7;
+    }
+
+    .privacy-note strong { display: block; margin-bottom: 0.12rem; }
+    .privacy-note span { color: #bcdacb; font-size: 0.93rem; }
+    .privacy-icon { font-size: 1.25rem; line-height: 1.35; }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .panel {
+      padding: clamp(1.2rem, 4vw, 2rem);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .panel-heading {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      margin-bottom: 1.35rem;
+    }
+
+    .step {
+      flex: 0 0 auto;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      color: #06101a;
+      background: linear-gradient(145deg, #a7d6ff, var(--accent-2));
+      border-radius: 10px;
+      font-weight: 900;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.2rem, 3vw, 1.55rem);
+      letter-spacing: -0.025em;
+    }
+
+    .panel-heading p {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .field { display: grid; gap: 0.45rem; }
+    .field.full { grid-column: 1 / -1; }
+
+    label.field-label {
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .required { color: #ffb17a; }
+
+    input[type="text"],
+    input[type="date"],
+    textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 0.76rem 0.85rem;
+      color: var(--text);
+      background: #090d13;
+      border: 1px solid rgba(174, 185, 200, 0.25);
+      border-radius: 11px;
+      outline: none;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    textarea { min-height: 86px; resize: vertical; }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent-2);
+      box-shadow: 0 0 0 3px rgba(77, 168, 255, 0.14);
+    }
+
+    .choice-group + .choice-group { margin-top: 1.65rem; }
+
+    .choice-group h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.02rem;
+    }
+
+    .choice-group > p {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .choices {
+      display: grid;
+      gap: 0.62rem;
+    }
+
+    .choice {
+      position: relative;
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 0.72rem;
+      align-items: start;
+      padding: 0.88rem 0.95rem;
+      border: 1px solid rgba(174, 185, 200, 0.18);
+      background: rgba(255, 255, 255, 0.025);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
+    }
+
+    .choice:hover {
+      transform: translateY(-1px);
+      border-color: var(--line-strong);
+    }
+
+    .choice:has(input:checked) {
+      border-color: rgba(77, 168, 255, 0.66);
+      background: rgba(77, 168, 255, 0.08);
+    }
+
+    .choice input {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      margin: 0.12rem 0 0;
+      border: 1.5px solid #708097;
+      border-radius: 6px;
+      background: #090d13;
+      display: grid;
+      place-content: center;
+      cursor: pointer;
+    }
+
+    .choice input::before {
+      content: "";
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid white;
+      border-bottom: 2px solid white;
+      transform: rotate(-45deg) scale(0);
+      margin-top: -2px;
+      transition: transform 0.12s ease;
+    }
+
+    .choice input:checked {
+      border-color: var(--accent-2);
+      background: var(--accent-2);
+    }
+
+    .choice input:checked::before { transform: rotate(-45deg) scale(1); }
+    .choice input:focus-visible { outline: 3px solid rgba(77, 168, 255, 0.28); outline-offset: 2px; }
+
+    .choice-title { display: block; font-weight: 760; }
+    .choice-description { display: block; margin-top: 0.12rem; color: var(--muted); font-size: 0.88rem; }
+
+    .signature-wrap {
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      border: 2px dashed #718096;
+      border-radius: 12px;
+    }
+
+    #signature-pad {
+      width: 100%;
+      height: 180px;
+      display: block;
+      cursor: crosshair;
+      touch-action: none;
+    }
+
+    .signature-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #748095;
+      pointer-events: none;
+      transition: opacity 0.15s ease;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .signature-wrap.has-signature .signature-placeholder { opacity: 0; }
+
+    .signature-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.6rem;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .text-button {
+      color: #c8e4ff;
+      background: transparent;
+      border: 0;
+      padding: 0.4rem 0;
+      cursor: pointer;
+      font-weight: 750;
+    }
+
+    .text-button:hover,
+    .text-button:focus-visible { color: white; outline: none; text-decoration: underline; }
+
+    .agreement {
+      margin-top: 1.2rem;
+    }
+
+    .agreement .choice { background: rgba(255, 122, 24, 0.05); }
+
+    .form-actions {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1.35rem;
+    }
+
+    .primary-button {
+      width: 100%;
+      min-height: 56px;
+      padding: 0.9rem 1.2rem;
+      border: 0;
+      border-radius: 12px;
+      color: #111;
+      background: linear-gradient(135deg, #ff9b4f, var(--accent));
+      box-shadow: 0 12px 30px rgba(255, 122, 24, 0.22);
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
+    }
+
+    .primary-button:hover { transform: translateY(-1px); box-shadow: 0 16px 34px rgba(255, 122, 24, 0.28); }
+    .primary-button:focus-visible { outline: 3px solid rgba(255, 177, 122, 0.42); outline-offset: 3px; }
+    .primary-button:disabled { cursor: wait; opacity: 0.7; transform: none; }
+
+    .status {
+      min-height: 1.4rem;
+      margin: 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .status.error { color: var(--danger); }
+    .status.success { color: var(--success); }
+
+    .next-step {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(78, 226, 154, 0.35);
+      border-radius: 12px;
+      background: rgba(78, 226, 154, 0.07);
+      color: #d7f8e7;
+    }
+
+    .next-step strong { display: block; margin-bottom: 0.2rem; }
+    .next-step p { margin: 0; color: #bddfcd; }
+
+    footer {
+      width: min(var(--content), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.5rem 0 2.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 680px) {
+      .site-header { align-items: flex-start; }
+      .brand span { display: none; }
+      .field-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .panel { padding: 1.15rem; }
+      .choice { padding: 0.78rem; }
+      .signature-actions { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Web of Objects — pagina principală">
+      <img src="/logo.png" alt="">
+      <span>Web of Objects</span>
+    </a>
+    <a class="back-link" href="/">Înapoi la site</a>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="eyebrow">Generare locală și privată</div>
+      <h1 id="page-title">Scrisoare de interes</h1>
+      <p>Completați informațiile, selectați nevoile și ofertele relevante, semnați, apoi descărcați scrisoarea în format PDF.</p>
+    </section>
+
+    <aside class="privacy-note" aria-label="Informații despre confidențialitate">
+      <div class="privacy-icon" aria-hidden="true">⌁</div>
+      <div>
+        <strong>Datele rămân în browserul dumneavoastră.</strong>
+        <span>Informațiile introduse și semnătura nu sunt transmise și nu sunt salvate de această pagină. PDF-ul este creat local, pe dispozitivul utilizat.</span>
+      </div>
+    </aside>
+
+    <form id="interest-form" novalidate>
+      <section class="panel" aria-labelledby="company-heading">
+        <div class="panel-heading">
+          <div class="step" aria-hidden="true">1</div>
+          <div>
+            <h2 id="company-heading">Compania și reprezentantul</h2>
+            <p>Aceste informații vor apărea în scrisoarea generată.</p>
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="field full">
+            <label class="field-label" for="company-name">Denumirea companiei <span class="required">*</span></label>
+            <input id="company-name" name="companyName" type="text" autocomplete="organization" required maxlength="160">
+          </div>
+          <div class="field">
+            <label class="field-label" for="company-cui">CUI <span class="required">*</span></label>
+            <input id="company-cui" name="companyCui" type="text" required maxlength="40" placeholder="Ex.: RO12345678">
+          </div>
+          <div class="field">
+            <label class="field-label" for="letter-date">Data <span class="required">*</span></label>
+            <input id="letter-date" name="letterDate" type="date" required>
+          </div>
+          <div class="field">
+            <label class="field-label" for="representative-name">Numele reprezentantului <span class="required">*</span></label>
+            <input id="representative-name" name="representativeName" type="text" autocomplete="name" required maxlength="120">
+          </div>
+          <div class="field">
+            <label class="field-label" for="representative-role">Funcția <span class="required">*</span></label>
+            <input id="representative-role" name="representativeRole" type="text" autocomplete="organization-title" required maxlength="120" placeholder="Ex.: Administrator, Director general">
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="relevance-heading">
+        <div class="panel-heading">
+          <div class="step" aria-hidden="true">2</div>
+          <div>
+            <h2 id="relevance-heading">Nevoile și relevanța pentru companie</h2>
+            <p>Selectați cel puțin o nevoie și cel puțin o ofertă relevantă.</p>
+          </div>
+        </div>
+
+        <div class="choice-group" id="needs-group" tabindex="-1">
+          <h3>Probleme sau nevoi relevante</h3>
+          <p>Puteți selecta mai multe opțiuni.</p>
+          <div class="choices">
+            <label class="choice">
+              <input type="checkbox" name="needs" value="Complexitatea dezvoltării, operării sau întreținerii soluțiilor software">
+              <span>Complexitatea dezvoltării, operării sau întreținerii soluțiilor software</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="needs" value="Integrarea și schimbul de informații între aplicații">
+              <span>Integrarea și schimbul de informații între aplicații</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="needs" value="Adaptarea aplicațiilor la procesele și nevoile companiei">
+              <span>Adaptarea aplicațiilor la procesele și nevoile companiei</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="needs" value="Automatizarea fluxurilor de lucru">
+              <span>Automatizarea fluxurilor de lucru</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="needs" value="Integrarea și utilizarea controlată a agenților AI">
+              <span>Integrarea și utilizarea controlată a agenților AI</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="needs" value="Integrarea dispozitivelor, echipamentelor sau activelor conectate">
+              <span>Integrarea dispozitivelor, echipamentelor sau activelor conectate</span>
+            </label>
+          </div>
+          <div class="field" style="margin-top: 0.75rem;">
+            <label class="field-label" for="other-need">Altă problemă sau nevoie <span style="color: var(--muted); font-weight: 500;">(opțional)</span></label>
+            <textarea id="other-need" name="otherNeed" maxlength="500" placeholder="Completați numai dacă doriți să menționați o altă nevoie."></textarea>
+          </div>
+        </div>
+
+        <div class="choice-group" id="offers-group" tabindex="-1">
+          <h3>Oferta Web of Objects relevantă</h3>
+          <p>Puteți selecta mai multe opțiuni.</p>
+          <div class="choices">
+            <label class="choice">
+              <input type="checkbox" name="offers" value="WoO Developer — pentru dezvoltarea și operarea aplicațiilor software pe o infrastructură și un cadru comun">
+              <span>
+                <span class="choice-title">WoO Developer</span>
+                <span class="choice-description">Dezvoltarea și operarea aplicațiilor software pe o infrastructură și un cadru comun.</span>
+              </span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="offers" value="Organization OS — pentru managementul adaptabil al informațiilor, proiectelor, colaborării și proceselor organizaționale">
+              <span>
+                <span class="choice-title">Organization OS</span>
+                <span class="choice-description">Managementul adaptabil al informațiilor, proiectelor, colaborării și proceselor organizaționale.</span>
+              </span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="offers" value="Automatizarea fluxurilor de lucru WoO — pentru definirea și executarea fluxurilor care utilizează obiectele, acțiunile, regulile și permisiunile platformei">
+              <span>
+                <span class="choice-title">Automatizarea fluxurilor de lucru WoO</span>
+                <span class="choice-description">Definirea și executarea fluxurilor care utilizează obiectele, acțiunile, regulile și permisiunile platformei.</span>
+              </span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="offers" value="Cadrul Agentic AI WoO — pentru agenți și fluxuri agentice controlate și accesul controlat al agenților AI externi prin interfața MCP WoO">
+              <span>
+                <span class="choice-title">Cadrul Agentic AI WoO</span>
+                <span class="choice-description">Agenți și fluxuri agentice controlate, precum și accesul controlat al agenților AI externi prin interfața MCP WoO.</span>
+              </span>
+            </label>
+            <label class="choice">
+              <input type="checkbox" name="offers" value="Cadrul de interoperabilitate IoT WoO — pentru integrarea echipamentelor, dispozitivelor sau activelor conectate în aplicații și fluxuri de lucru">
+              <span>
+                <span class="choice-title">Cadrul de interoperabilitate IoT WoO</span>
+                <span class="choice-description">Integrarea echipamentelor, dispozitivelor sau activelor conectate în aplicații și fluxuri de lucru.</span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="signature-heading">
+        <div class="panel-heading">
+          <div class="step" aria-hidden="true">3</div>
+          <div>
+            <h2 id="signature-heading">Confirmare și semnătură</h2>
+            <p>Semnați folosind mouse-ul, touchpad-ul, degetul sau un stylus.</p>
+          </div>
+        </div>
+
+        <div class="signature-wrap" id="signature-wrap">
+          <canvas id="signature-pad" width="1200" height="360" role="img" aria-label="Spațiu pentru desenarea semnăturii"></canvas>
+          <div class="signature-placeholder">Desenați semnătura în acest spațiu</div>
+        </div>
+        <div class="signature-actions">
+          <span>Semnătura va fi inclusă numai în PDF-ul descărcat.</span>
+          <button class="text-button" type="button" id="clear-signature">Șterge semnătura</button>
+        </div>
+
+        <div class="agreement">
+          <label class="choice">
+            <input id="agreement" type="checkbox" name="agreement" required>
+            <span>Declar că am calitatea necesară pentru a exprima interesul companiei și confirm corectitudinea informațiilor completate. Sunt de acord cu utilizarea scrisorii în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects și înțeleg caracterul neangajant al acesteia.</span>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button class="primary-button" id="generate-pdf" type="submit">Generează și descarcă scrisoarea PDF</button>
+          <p class="status" id="form-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="next-step" id="next-step" hidden>
+          <strong>PDF-ul a fost generat.</strong>
+          <p>Trimiteți fișierul descărcat, de preferat de pe adresa profesională a companiei, persoanei de contact Web Society care v-a transmis această pagină.</p>
+        </div>
+      </section>
+    </form>
+
+    <noscript>
+      <div class="panel" style="margin-top: 1rem;">Pentru completarea și generarea locală a PDF-ului este necesară activarea JavaScript în browser.</div>
+    </noscript>
+  </main>
+
+  <footer>© 2026 Web Society S.R.L. · Web of Objects</footer>
+
+  <script>
+  (() => {
+    "use strict";
+
+    const form = document.getElementById("interest-form");
+    const status = document.getElementById("form-status");
+    const generateButton = document.getElementById("generate-pdf");
+    const nextStep = document.getElementById("next-step");
+    const signatureCanvas = document.getElementById("signature-pad");
+    const signatureWrap = document.getElementById("signature-wrap");
+    const signatureContext = signatureCanvas.getContext("2d");
+    const clearSignatureButton = document.getElementById("clear-signature");
+    let drawing = false;
+    let hasSignature = false;
+
+    const today = new Date();
+    const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+      .toISOString()
+      .slice(0, 10);
+    document.getElementById("letter-date").value = localToday;
+
+    signatureContext.strokeStyle = "#111827";
+    signatureContext.fillStyle = "#111827";
+    signatureContext.lineWidth = 5;
+    signatureContext.lineCap = "round";
+    signatureContext.lineJoin = "round";
+
+    function signaturePoint(event) {
+      const rect = signatureCanvas.getBoundingClientRect();
+      return {
+        x: (event.clientX - rect.left) * (signatureCanvas.width / rect.width),
+        y: (event.clientY - rect.top) * (signatureCanvas.height / rect.height)
+      };
+    }
+
+    signatureCanvas.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      drawing = true;
+      hasSignature = true;
+      signatureWrap.classList.add("has-signature");
+      signatureCanvas.setPointerCapture(event.pointerId);
+      const point = signaturePoint(event);
+      signatureContext.beginPath();
+      signatureContext.arc(point.x, point.y, 2.5, 0, Math.PI * 2);
+      signatureContext.fill();
+      signatureContext.beginPath();
+      signatureContext.moveTo(point.x, point.y);
+    });
+
+    signatureCanvas.addEventListener("pointermove", (event) => {
+      if (!drawing) return;
+      event.preventDefault();
+      const point = signaturePoint(event);
+      signatureContext.lineTo(point.x, point.y);
+      signatureContext.stroke();
+    });
+
+    function endSignature(event) {
+      if (!drawing) return;
+      drawing = false;
+      signatureContext.closePath();
+      if (event && signatureCanvas.hasPointerCapture(event.pointerId)) {
+        signatureCanvas.releasePointerCapture(event.pointerId);
+      }
+    }
+
+    signatureCanvas.addEventListener("pointerup", endSignature);
+    signatureCanvas.addEventListener("pointercancel", endSignature);
+    signatureCanvas.addEventListener("pointerleave", (event) => {
+      if (event.buttons === 0) endSignature(event);
+    });
+
+    clearSignatureButton.addEventListener("click", () => {
+      signatureContext.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+      hasSignature = false;
+      signatureWrap.classList.remove("has-signature");
+      setStatus("Semnătura a fost ștearsă.", "");
+    });
+
+    function setStatus(message, type) {
+      status.textContent = message;
+      status.className = `status${type ? ` ${type}` : ""}`;
+    }
+
+    function checkedValues(name) {
+      return Array.from(form.querySelectorAll(`input[name="${name}"]:checked`), input => input.value);
+    }
+
+    function formatDate(isoDate) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) return isoDate;
+      const [year, month, day] = isoDate.split("-");
+      return `${day}.${month}.${year}`;
+    }
+
+    function cleanFilename(value) {
+      return value
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-zA-Z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .slice(0, 70) || "Companie";
+    }
+
+    function loadImage(source) {
+      return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.onload = () => resolve(image);
+        image.onerror = reject;
+        image.src = source;
+      });
+    }
+
+    class LetterDocument {
+      constructor(logo) {
+        this.width = 1240;
+        this.height = 1754;
+        this.marginX = 105;
+        this.bottomMargin = 115;
+        this.pages = [];
+        this.logo = logo;
+        this.newPage();
+      }
+
+      newPage() {
+        const canvas = document.createElement("canvas");
+        canvas.width = this.width;
+        canvas.height = this.height;
+        const context = canvas.getContext("2d");
+        context.fillStyle = "#ffffff";
+        context.fillRect(0, 0, this.width, this.height);
+        context.textBaseline = "top";
+        context.fillStyle = "#172033";
+        this.pages.push({ canvas, context });
+        this.canvas = canvas;
+        this.context = context;
+        this.y = 100;
+        if (this.pages.length > 1) {
+          this.context.font = "700 22px Arial, sans-serif";
+          this.context.fillStyle = "#364052";
+          this.context.fillText("Scrisoare de interes — Web of Objects", this.marginX, 62);
+          this.context.fillStyle = "#ff7a18";
+          this.context.fillRect(this.marginX, 98, this.width - this.marginX * 2, 4);
+          this.y = 138;
+        }
+      }
+
+      usableWidth() {
+        return this.width - this.marginX * 2;
+      }
+
+      setFont(size, weight = 400) {
+        this.context.font = `${weight} ${size}px Arial, sans-serif`;
+      }
+
+      wrap(text, maxWidth) {
+        const paragraphs = String(text).split("\n");
+        const lines = [];
+        paragraphs.forEach((paragraph, paragraphIndex) => {
+          const words = paragraph.trim().split(/\s+/).filter(Boolean);
+          if (!words.length) {
+            lines.push("");
+            return;
+          }
+          let line = words.shift();
+          words.forEach(word => {
+            const candidate = `${line} ${word}`;
+            if (this.context.measureText(candidate).width <= maxWidth) {
+              line = candidate;
+            } else {
+              lines.push(line);
+              line = word;
+            }
+          });
+          lines.push(line);
+          if (paragraphIndex < paragraphs.length - 1) lines.push("");
+        });
+        return lines;
+      }
+
+      ensureSpace(height) {
+        if (this.y + height > this.height - this.bottomMargin) this.newPage();
+      }
+
+      paragraph(text, options = {}) {
+        const size = options.size || 25;
+        const lineHeight = options.lineHeight || Math.round(size * 1.48);
+        const weight = options.weight || 400;
+        const color = options.color || "#253047";
+        const gap = options.gap === undefined ? 22 : options.gap;
+        this.setFont(size, weight);
+        const lines = this.wrap(text, options.width || this.usableWidth());
+        const height = lines.length * lineHeight + gap;
+        this.ensureSpace(height);
+        this.context.fillStyle = color;
+        lines.forEach(line => {
+          this.context.fillText(line, options.x || this.marginX, this.y);
+          this.y += lineHeight;
+        });
+        this.y += gap;
+      }
+
+      sectionTitle(text) {
+        this.ensureSpace(76);
+        this.setFont(29, 700);
+        this.context.fillStyle = "#101827";
+        this.context.fillText(text, this.marginX, this.y);
+        this.y += 42;
+        this.context.fillStyle = "#ff7a18";
+        this.context.fillRect(this.marginX, this.y, 68, 5);
+        this.y += 27;
+      }
+
+      selectedItem(text) {
+        const box = 27;
+        const left = this.marginX + 2;
+        const textX = left + 46;
+        const maxWidth = this.width - this.marginX - textX;
+        this.setFont(23, 400);
+        const lines = this.wrap(text, maxWidth);
+        const lineHeight = 34;
+        const height = Math.max(box, lines.length * lineHeight) + 14;
+        this.ensureSpace(height);
+        this.context.fillStyle = "#ff7a18";
+        this.context.beginPath();
+        this.context.roundRect(left, this.y + 2, box, box, 6);
+        this.context.fill();
+        this.context.strokeStyle = "#ffffff";
+        this.context.lineWidth = 4;
+        this.context.beginPath();
+        this.context.moveTo(left + 6, this.y + 15);
+        this.context.lineTo(left + 12, this.y + 21);
+        this.context.lineTo(left + 22, this.y + 9);
+        this.context.stroke();
+        this.context.fillStyle = "#253047";
+        lines.forEach((line, index) => this.context.fillText(line, textX, this.y + index * lineHeight));
+        this.y += height;
+      }
+
+      firstPageHeader(date) {
+        if (this.logo) this.context.drawImage(this.logo, this.marginX, 55, 125, 125);
+        this.setFont(35, 800);
+        this.context.fillStyle = "#111827";
+        this.context.fillText("Scrisoare de interes", 265, 69);
+        this.setFont(23, 600);
+        this.context.fillStyle = "#526076";
+        this.context.fillText("Web of Objects", 265, 119);
+        this.setFont(21, 400);
+        this.context.fillText(`Data: ${date}`, this.width - this.marginX - 190, 73);
+        this.context.fillStyle = "#ff7a18";
+        this.context.fillRect(this.marginX, 205, this.width - this.marginX * 2, 5);
+        this.y = 250;
+      }
+
+      signatureBlock(data) {
+        this.ensureSpace(390);
+        this.paragraph("Cu stimă,", { gap: 14 });
+        this.paragraph(data.companyName, { weight: 700, gap: 8 });
+        this.paragraph(`Reprezentantul companiei: ${data.representativeName}, ${data.representativeRole}`, { gap: 12 });
+
+        this.setFont(21, 700);
+        this.context.fillStyle = "#526076";
+        this.context.fillText("Semnătură", this.marginX, this.y);
+        this.y += 34;
+        this.context.strokeStyle = "#c8ced8";
+        this.context.lineWidth = 2;
+        this.context.strokeRect(this.marginX, this.y, 460, 145);
+        this.context.drawImage(signatureCanvas, this.marginX + 12, this.y + 10, 436, 120);
+        this.setFont(22, 400);
+        this.context.fillStyle = "#253047";
+        this.context.fillText(`Data: ${data.date}`, this.marginX + 535, this.y + 52);
+        this.y += 180;
+      }
+
+      addFooters() {
+        this.pages.forEach((page, index) => {
+          const context = page.context;
+          context.strokeStyle = "#dce2ea";
+          context.lineWidth = 2;
+          context.beginPath();
+          context.moveTo(this.marginX, this.height - 78);
+          context.lineTo(this.width - this.marginX, this.height - 78);
+          context.stroke();
+          context.font = "400 18px Arial, sans-serif";
+          context.fillStyle = "#7a8495";
+          context.fillText("Web Society S.R.L. · Web of Objects", this.marginX, this.height - 55);
+          const pageText = `Pagina ${index + 1} / ${this.pages.length}`;
+          const pageWidth = context.measureText(pageText).width;
+          context.fillText(pageText, this.width - this.marginX - pageWidth, this.height - 55);
+        });
+      }
+    }
+
+    function dataUrlBytes(dataUrl) {
+      const encoded = dataUrl.split(",")[1];
+      const binary = atob(encoded);
+      const bytes = new Uint8Array(binary.length);
+      for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+      return bytes;
+    }
+
+    function concatenate(chunks) {
+      const size = chunks.reduce((sum, chunk) => sum + chunk.length, 0);
+      const result = new Uint8Array(size);
+      let offset = 0;
+      chunks.forEach(chunk => {
+        result.set(chunk, offset);
+        offset += chunk.length;
+      });
+      return result;
+    }
+
+    function buildPdf(pageCanvases) {
+      const encoder = new TextEncoder();
+      const textBytes = text => encoder.encode(text);
+      const pageWidth = "595.28";
+      const pageHeight = "841.89";
+      const infoObject = 3 + pageCanvases.length * 3;
+      const maxObject = infoObject;
+      const objects = new Array(maxObject + 1);
+      const pageRefs = [];
+
+      pageCanvases.forEach((canvas, index) => {
+        const pageObject = 3 + index * 3;
+        const imageObject = pageObject + 1;
+        const contentObject = pageObject + 2;
+        const imageName = `Im${index + 1}`;
+        const jpeg = dataUrlBytes(canvas.toDataURL("image/jpeg", 0.92));
+        const content = `q\n${pageWidth} 0 0 ${pageHeight} 0 0 cm\n/${imageName} Do\nQ\n`;
+
+        pageRefs.push(`${pageObject} 0 R`);
+        objects[pageObject] = textBytes(
+          `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Resources << /XObject << /${imageName} ${imageObject} 0 R >> >> /Contents ${contentObject} 0 R >>`
+        );
+        objects[imageObject] = concatenate([
+          textBytes(`<< /Type /XObject /Subtype /Image /Width ${canvas.width} /Height ${canvas.height} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jpeg.length} >>\nstream\n`),
+          jpeg,
+          textBytes("\nendstream")
+        ]);
+        objects[contentObject] = textBytes(`<< /Length ${textBytes(content).length} >>\nstream\n${content}endstream`);
+      });
+
+      objects[1] = textBytes("<< /Type /Catalog /Pages 2 0 R >>");
+      objects[2] = textBytes(`<< /Type /Pages /Kids [${pageRefs.join(" ")}] /Count ${pageCanvases.length} >>`);
+      const pdfDate = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+      objects[infoObject] = textBytes(`<< /Title (Scrisoare de interes - Web of Objects) /Producer (Web of Objects local PDF generator) /CreationDate (D:${pdfDate}) >>`);
+
+      const chunks = [textBytes("%PDF-1.4\n%WOO\n")];
+      const offsets = new Array(maxObject + 1).fill(0);
+      let length = chunks[0].length;
+      for (let objectNumber = 1; objectNumber <= maxObject; objectNumber += 1) {
+        offsets[objectNumber] = length;
+        const prefix = textBytes(`${objectNumber} 0 obj\n`);
+        const suffix = textBytes("\nendobj\n");
+        chunks.push(prefix, objects[objectNumber], suffix);
+        length += prefix.length + objects[objectNumber].length + suffix.length;
+      }
+
+      const xrefOffset = length;
+      let xref = `xref\n0 ${maxObject + 1}\n0000000000 65535 f \n`;
+      for (let objectNumber = 1; objectNumber <= maxObject; objectNumber += 1) {
+        xref += `${String(offsets[objectNumber]).padStart(10, "0")} 00000 n \n`;
+      }
+      xref += `trailer\n<< /Size ${maxObject + 1} /Root 1 0 R /Info ${infoObject} 0 R >>\nstartxref\n${xrefOffset}\n%%EOF`;
+      chunks.push(textBytes(xref));
+      return new Blob(chunks, { type: "application/pdf" });
+    }
+
+    async function createLetterPdf(data) {
+      let logo = null;
+      try {
+        logo = await loadImage("/logo.png");
+      } catch (_) {
+        logo = null;
+      }
+
+      const documentRenderer = new LetterDocument(logo);
+      documentRenderer.firstPageHeader(data.date);
+      documentRenderer.paragraph("Către: Web Society S.R.L.", { weight: 700, gap: 6 });
+      documentRenderer.paragraph("În atenția: George-Valentin Marin, Asociat", { gap: 18 });
+      documentRenderer.paragraph("Subiect: Exprimarea interesului pentru soluția Web of Objects", { weight: 700, gap: 26 });
+      documentRenderer.paragraph("Stimată doamnă/Stimate domn,", { gap: 20 });
+      documentRenderer.paragraph(
+        `Prin prezenta, ${data.companyName}, CUI ${data.companyCui}, confirmă interesul față de proiectul Web of Objects — WoO, dezvoltat de Web Society S.R.L.`
+      );
+      documentRenderer.paragraph(
+        "Reprezentanților companiei noastre le-a fost prezentată platforma Web of Objects, o platformă software generală pentru construirea și operarea aplicațiilor, care furnizează o infrastructură comună și un cadru software pentru realizarea stratului de prezentare și a stratului de business. Platforma urmărește reducerea complexității dezvoltării software, creșterea interoperabilității dintre aplicații și realizarea unor soluții mai ușor de adaptat la nevoile utilizatorilor."
+      );
+
+      documentRenderer.sectionTitle("Nevoile și relevanța pentru compania noastră");
+      documentRenderer.paragraph("În activitatea companiei sunt relevante următoarele probleme ori nevoi:", { gap: 15 });
+      data.needs.forEach(need => documentRenderer.selectedItem(need));
+      if (data.otherNeed) documentRenderer.selectedItem(`Altă problemă sau nevoie: ${data.otherNeed}`);
+
+      documentRenderer.paragraph("Considerăm relevantă pentru activitatea noastră următoarea ofertă:", { weight: 700, gap: 15 });
+      data.offers.forEach(offer => documentRenderer.selectedItem(offer));
+
+      documentRenderer.paragraph(
+        "Prin selectarea opțiunilor de mai sus, compania noastră confirmă relevanța acestora și își exprimă interesul pentru o prezentare sau demonstrație Web of Objects și, după caz, pentru participarea la un proiect-pilot și evaluarea unei viitoare oferte comerciale."
+      );
+      documentRenderer.paragraph(
+        "Suntem de acord ca această scrisoare să fie utilizată de Web Society S.R.L. în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects, ca dovadă a existenței problemei și a interesului de evaluare, testare sau adopție a soluției, cu respectarea informațiilor declarate confidențiale de compania noastră."
+      );
+      documentRenderer.paragraph(
+        "Prezenta scrisoare exprimă un interes real pentru continuarea evaluării soluției, fără a constitui un contract, o comandă fermă sau o obligație necondiționată de cumpărare."
+      );
+      documentRenderer.paragraph(
+        "Declar că am calitatea necesară pentru a exprima interesul companiei și confirm corectitudinea informațiilor completate.",
+        { weight: 700 }
+      );
+      documentRenderer.signatureBlock(data);
+      documentRenderer.addFooters();
+
+      return buildPdf(documentRenderer.pages.map(page => page.canvas));
+    }
+
+    function downloadBlob(blob, filename) {
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      nextStep.hidden = true;
+      setStatus("", "");
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        setStatus("Completați toate câmpurile obligatorii și confirmarea finală.", "error");
+        return;
+      }
+
+      const needs = checkedValues("needs");
+      const otherNeed = document.getElementById("other-need").value.trim();
+      const offers = checkedValues("offers");
+
+      if (!needs.length && !otherNeed) {
+        setStatus("Selectați cel puțin o problemă sau nevoie relevantă.", "error");
+        document.getElementById("needs-group").focus();
+        return;
+      }
+      if (!offers.length) {
+        setStatus("Selectați cel puțin o ofertă Web of Objects relevantă.", "error");
+        document.getElementById("offers-group").focus();
+        return;
+      }
+      if (!hasSignature) {
+        setStatus("Desenați semnătura reprezentantului companiei.", "error");
+        signatureCanvas.focus();
+        signatureWrap.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+
+      const data = {
+        companyName: document.getElementById("company-name").value.trim(),
+        companyCui: document.getElementById("company-cui").value.trim(),
+        date: formatDate(document.getElementById("letter-date").value),
+        representativeName: document.getElementById("representative-name").value.trim(),
+        representativeRole: document.getElementById("representative-role").value.trim(),
+        needs,
+        otherNeed,
+        offers
+      };
+
+      try {
+        generateButton.disabled = true;
+        generateButton.textContent = "Se generează PDF-ul…";
+        setStatus("PDF-ul este creat local pe dispozitivul dumneavoastră.", "");
+        await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+        const pdf = await createLetterPdf(data);
+        downloadBlob(pdf, `Scrisoare-interes-Web-of-Objects-${cleanFilename(data.companyName)}.pdf`);
+        setStatus("Scrisoarea a fost generată și descărcată.", "success");
+        nextStep.hidden = false;
+        nextStep.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      } catch (error) {
+        console.error(error);
+        setStatus("PDF-ul nu a putut fi generat. Reîncercați sau utilizați un browser actualizat.", "error");
+      } finally {
+        generateButton.disabled = false;
+        generateButton.textContent = "Generează și descarcă scrisoarea PDF";
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
