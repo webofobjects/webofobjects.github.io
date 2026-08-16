@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scrisoare de interes — Web of Objects</title>
-  <meta name="description" content="Generați și semnați local o scrisoare de interes pentru Web of Objects.">
+  <title>Letter of Interest — Web of Objects</title>
+  <meta name="description" content="Generate and sign a letter of interest for Web of Objects locally in your browser.">
   <meta name="robots" content="noindex,nofollow">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="canonical" href="https://webofobjects.com/scrisoare-de-interes/">
+  <link rel="canonical" href="https://webofobjects.com/letter-of-interest/">
   <style>
     :root {
       color-scheme: dark;
@@ -505,28 +505,28 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/" aria-label="Web of Objects — pagina principală">
+    <a class="brand" href="/" aria-label="Web of Objects — home page">
       <img src="/logo.png" alt="">
       <span>Web of Objects</span>
     </a>
     <div class="header-actions">
-      <a class="back-link" href="/letter-of-interest/">English</a>
-      <a class="back-link" href="/">Înapoi la site</a>
+      <a class="back-link" href="/scrisoare-de-interes/">Română</a>
+      <a class="back-link" href="/">Back to website</a>
     </div>
   </header>
 
   <main>
     <section class="intro" aria-labelledby="page-title">
-      <div class="eyebrow">Generare locală și privată</div>
-      <h1 id="page-title">Scrisoare de interes</h1>
-      <p>Completați informațiile, selectați nevoile și ofertele relevante, semnați, apoi descărcați scrisoarea în format PDF.</p>
+      <div class="eyebrow">Private, local generation</div>
+      <h1 id="page-title">Letter of Interest</h1>
+      <p>Enter the information, select the relevant needs and offerings, sign, and download the letter as a PDF.</p>
     </section>
 
-    <aside class="privacy-note" aria-label="Informații despre confidențialitate">
+    <aside class="privacy-note" aria-label="Privacy information">
       <div class="privacy-icon" aria-hidden="true">⌁</div>
       <div>
-        <strong>Datele rămân în browserul dumneavoastră.</strong>
-        <span>Informațiile introduse și semnătura nu sunt transmise și nu sunt salvate de această pagină. PDF-ul este creat local, pe dispozitivul utilizat.</span>
+        <strong>Your data stays in your browser.</strong>
+        <span>The information you enter and your signature are not transmitted or saved by this page. The PDF is created locally on your device.</span>
       </div>
     </aside>
 
@@ -535,31 +535,31 @@
         <div class="panel-heading">
           <div class="step" aria-hidden="true">1</div>
           <div>
-            <h2 id="company-heading">Compania și reprezentantul</h2>
-            <p>Aceste informații vor apărea în scrisoarea generată.</p>
+            <h2 id="company-heading">Company and representative</h2>
+            <p>This information will appear in the generated letter.</p>
           </div>
         </div>
 
         <div class="field-grid">
           <div class="field full">
-            <label class="field-label" for="company-name">Denumirea companiei <span class="required">*</span></label>
+            <label class="field-label" for="company-name">Company name <span class="required">*</span></label>
             <input id="company-name" name="companyName" type="text" autocomplete="organization" required maxlength="160">
           </div>
           <div class="field">
-            <label class="field-label" for="company-cui">CUI <span class="required">*</span></label>
-            <input id="company-cui" name="companyCui" type="text" required maxlength="40" placeholder="Ex.: RO12345678">
+            <label class="field-label" for="company-cui">Company registration or tax number <span class="required">*</span></label>
+            <input id="company-cui" name="companyCui" type="text" required maxlength="60" placeholder="E.g. RO12345678">
           </div>
           <div class="field">
-            <label class="field-label" for="letter-date">Data <span class="required">*</span></label>
+            <label class="field-label" for="letter-date">Date <span class="required">*</span></label>
             <input id="letter-date" name="letterDate" type="date" required>
           </div>
           <div class="field">
-            <label class="field-label" for="representative-name">Numele reprezentantului <span class="required">*</span></label>
+            <label class="field-label" for="representative-name">Representative's name <span class="required">*</span></label>
             <input id="representative-name" name="representativeName" type="text" autocomplete="name" required maxlength="120">
           </div>
           <div class="field">
-            <label class="field-label" for="representative-role">Funcția <span class="required">*</span></label>
-            <input id="representative-role" name="representativeRole" type="text" autocomplete="organization-title" required maxlength="120" placeholder="Ex.: Administrator, Director general">
+            <label class="field-label" for="representative-role">Role <span class="required">*</span></label>
+            <input id="representative-role" name="representativeRole" type="text" autocomplete="organization-title" required maxlength="120" placeholder="E.g. Director, Chief Executive Officer">
           </div>
         </div>
       </section>
@@ -568,83 +568,83 @@
         <div class="panel-heading">
           <div class="step" aria-hidden="true">2</div>
           <div>
-            <h2 id="relevance-heading">Nevoile și relevanța pentru companie</h2>
-            <p>Selectați cel puțin o nevoie și cel puțin o ofertă relevantă.</p>
+            <h2 id="relevance-heading">Company needs and relevance</h2>
+            <p>Select at least one need and one relevant Web of Objects offering.</p>
           </div>
         </div>
 
         <div class="choice-group" id="needs-group" tabindex="-1">
-          <h3>Probleme sau nevoi relevante</h3>
-          <p>Puteți selecta mai multe opțiuni.</p>
+          <h3>Relevant problems or needs</h3>
+          <p>You may select more than one option.</p>
           <div class="choices">
             <label class="choice">
-              <input type="checkbox" name="needs" value="Complexitatea dezvoltării, operării sau întreținerii soluțiilor software">
-              <span>Complexitatea dezvoltării, operării sau întreținerii soluțiilor software</span>
+              <input type="checkbox" name="needs" value="The complexity of developing, operating, or maintaining software solutions">
+              <span>The complexity of developing, operating, or maintaining software solutions</span>
             </label>
             <label class="choice">
-              <input type="checkbox" name="needs" value="Integrarea și schimbul de informații între aplicații">
-              <span>Integrarea și schimbul de informații între aplicații</span>
+              <input type="checkbox" name="needs" value="Integration and information exchange between applications">
+              <span>Integration and information exchange between applications</span>
             </label>
             <label class="choice">
-              <input type="checkbox" name="needs" value="Adaptarea aplicațiilor la procesele și nevoile companiei">
-              <span>Adaptarea aplicațiilor la procesele și nevoile companiei</span>
+              <input type="checkbox" name="needs" value="Adapting applications to the company's processes and needs">
+              <span>Adapting applications to the company's processes and needs</span>
             </label>
             <label class="choice">
-              <input type="checkbox" name="needs" value="Automatizarea fluxurilor de lucru">
-              <span>Automatizarea fluxurilor de lucru</span>
+              <input type="checkbox" name="needs" value="Workflow automation">
+              <span>Workflow automation</span>
             </label>
             <label class="choice">
-              <input type="checkbox" name="needs" value="Integrarea și utilizarea controlată a agenților AI">
-              <span>Integrarea și utilizarea controlată a agenților AI</span>
+              <input type="checkbox" name="needs" value="The integration and controlled use of AI agents">
+              <span>The integration and controlled use of AI agents</span>
             </label>
             <label class="choice">
-              <input type="checkbox" name="needs" value="Integrarea dispozitivelor, echipamentelor sau activelor conectate">
-              <span>Integrarea dispozitivelor, echipamentelor sau activelor conectate</span>
+              <input type="checkbox" name="needs" value="The integration of connected devices, equipment, or assets">
+              <span>The integration of connected devices, equipment, or assets</span>
             </label>
           </div>
           <div class="field" style="margin-top: 0.75rem;">
-            <label class="field-label" for="other-need">Altă problemă sau nevoie <span style="color: var(--muted); font-weight: 500;">(opțional)</span></label>
-            <textarea id="other-need" name="otherNeed" maxlength="500" placeholder="Completați numai dacă doriți să menționați o altă nevoie."></textarea>
+            <label class="field-label" for="other-need">Other problem or need <span style="color: var(--muted); font-weight: 500;">(optional)</span></label>
+            <textarea id="other-need" name="otherNeed" maxlength="500" placeholder="Complete this field only if you wish to mention another need."></textarea>
           </div>
         </div>
 
         <div class="choice-group" id="offers-group" tabindex="-1">
-          <h3>Oferta Web of Objects relevantă</h3>
-          <p>Puteți selecta mai multe opțiuni.</p>
+          <h3>Relevant Web of Objects offering</h3>
+          <p>You may select more than one option.</p>
           <div class="choices">
             <label class="choice">
-              <input type="checkbox" name="offers" value="WoO Developer — pentru dezvoltarea și operarea aplicațiilor software pe o infrastructură și un cadru comun">
+              <input type="checkbox" name="offers" value="WoO Developer — for developing and operating software applications on shared infrastructure and a common framework">
               <span>
                 <span class="choice-title">WoO Developer</span>
-                <span class="choice-description">Dezvoltarea și operarea aplicațiilor software pe o infrastructură și un cadru comun.</span>
+                <span class="choice-description">Develop and operate software applications on shared infrastructure and a common framework.</span>
               </span>
             </label>
             <label class="choice">
-              <input type="checkbox" name="offers" value="Organization OS — pentru managementul adaptabil al informațiilor, proiectelor, colaborării și proceselor organizaționale">
+              <input type="checkbox" name="offers" value="Organization OS — for adaptable management of information, projects, collaboration, and organizational processes">
               <span>
                 <span class="choice-title">Organization OS</span>
-                <span class="choice-description">Managementul adaptabil al informațiilor, proiectelor, colaborării și proceselor organizaționale.</span>
+                <span class="choice-description">Adaptable management of information, projects, collaboration, and organizational processes.</span>
               </span>
             </label>
             <label class="choice">
-              <input type="checkbox" name="offers" value="Automatizarea fluxurilor de lucru WoO — pentru definirea și executarea fluxurilor care utilizează obiectele, acțiunile, regulile și permisiunile platformei">
+              <input type="checkbox" name="offers" value="WoO Workflow Automation — for defining and executing workflows that use the platform's objects, actions, rules, and permissions">
               <span>
-                <span class="choice-title">Automatizarea fluxurilor de lucru WoO</span>
-                <span class="choice-description">Definirea și executarea fluxurilor care utilizează obiectele, acțiunile, regulile și permisiunile platformei.</span>
+                <span class="choice-title">WoO Workflow Automation</span>
+                <span class="choice-description">Define and execute workflows that use the platform's objects, actions, rules, and permissions.</span>
               </span>
             </label>
             <label class="choice">
-              <input type="checkbox" name="offers" value="Cadrul Agentic AI WoO — pentru agenți și fluxuri agentice controlate și accesul controlat al agenților AI externi prin interfața MCP WoO">
+              <input type="checkbox" name="offers" value="WoO Agentic AI Framework — for controlled AI agents and agentic workflows and controlled access by external AI agents through the WoO MCP interface">
               <span>
-                <span class="choice-title">Cadrul Agentic AI WoO</span>
-                <span class="choice-description">Agenți și fluxuri agentice controlate, precum și accesul controlat al agenților AI externi prin interfața MCP WoO.</span>
+                <span class="choice-title">WoO Agentic AI Framework</span>
+                <span class="choice-description">Controlled AI agents and agentic workflows, as well as controlled access by external AI agents through the WoO MCP interface.</span>
               </span>
             </label>
             <label class="choice">
-              <input type="checkbox" name="offers" value="Cadrul de interoperabilitate IoT WoO — pentru integrarea echipamentelor, dispozitivelor sau activelor conectate în aplicații și fluxuri de lucru">
+              <input type="checkbox" name="offers" value="WoO IoT Interoperability Framework — for integrating connected equipment, devices, or assets into applications and workflows">
               <span>
-                <span class="choice-title">Cadrul de interoperabilitate IoT WoO</span>
-                <span class="choice-description">Integrarea echipamentelor, dispozitivelor sau activelor conectate în aplicații și fluxuri de lucru.</span>
+                <span class="choice-title">WoO IoT Interoperability Framework</span>
+                <span class="choice-description">Integrate connected equipment, devices, or assets into applications and workflows.</span>
               </span>
             </label>
           </div>
@@ -655,76 +655,76 @@
         <div class="panel-heading">
           <div class="step" aria-hidden="true">3</div>
           <div>
-            <h2 id="signature-heading">Confirmare și semnătură</h2>
-            <p>Citiți textul confirmat, apoi semnați folosind mouse-ul, touchpad-ul, degetul sau un stylus.</p>
+            <h2 id="signature-heading">Confirmation and signature</h2>
+            <p>Read the statement below, then sign using a mouse, touchpad, finger, or stylus.</p>
           </div>
         </div>
 
         <div class="letter-preview" aria-labelledby="letter-preview-heading">
-          <h3 id="letter-preview-heading">Textul confirmat prin semnare</h3>
-          <p class="preview-note">Acest text și opțiunile selectate la pasul anterior vor fi incluse în PDF.</p>
+          <h3 id="letter-preview-heading">Statement confirmed by signing</h3>
+          <p class="preview-note">This text and the options selected in the previous step will be included in the PDF.</p>
 
           <div class="preview-meta">
-            <p><strong>Data:</strong> <span class="preview-value" id="preview-date">[data]</span></p>
-            <p><strong>Către:</strong> George-Valentin Marin<br><strong>Calitate:</strong> Inițiator al proiectului Web of Objects și fondator al Web Society S.R.L. — societate în curs de constituire</p>
-            <p><strong>Subiect:</strong> Exprimarea interesului pentru soluția Web of Objects</p>
+            <p><strong>Date:</strong> <span class="preview-value" id="preview-date">[date]</span></p>
+            <p><strong>To:</strong> George-Valentin Marin<br><strong>Capacity:</strong> Initiator of the Web of Objects project and founder of Web Society S.R.L. — a company in the process of incorporation</p>
+            <p><strong>Subject:</strong> Expression of interest in the Web of Objects solution</p>
           </div>
 
           <div class="preview-body">
-            <p>Stimată doamnă/Stimate domn,</p>
+            <p>Dear Sir or Madam,</p>
 
-            <p>Prin prezenta, <span class="preview-value" id="preview-company">[denumirea companiei]</span>, CUI <span class="preview-value" id="preview-cui">[CUI]</span>, confirmă interesul față de proiectul <strong>Web of Objects — WoO</strong>, inițiat de George-Valentin Marin și care urmează să fie dezvoltat și comercializat prin Web Society S.R.L., după înmatricularea societății.</p>
+            <p>By this letter, <span class="preview-value" id="preview-company">[company name]</span>, company registration or tax number <span class="preview-value" id="preview-cui">[registration or tax number]</span>, confirms its interest in the <strong>Web of Objects — WoO</strong> project, initiated by George-Valentin Marin and intended to be developed and commercialized through Web Society S.R.L. following the company's incorporation.</p>
 
-            <p>Reprezentanților companiei noastre le-a fost prezentat prototipul platformei Web of Objects, aflat la nivelul de maturitate tehnologică TRL 3–4. Web of Objects este o platformă software generală pentru construirea și operarea aplicațiilor, care furnizează o infrastructură comună și un cadru software pentru realizarea stratului de prezentare și a stratului de business. Platforma urmărește reducerea complexității dezvoltării software, creșterea interoperabilității dintre aplicații și realizarea unor soluții mai ușor de adaptat la nevoile utilizatorilor.</p>
+            <p>Representatives of our company have been presented with the prototype of the Web of Objects platform at Technology Readiness Level TRL 3–4. Web of Objects is a general-purpose software platform for building and operating applications, providing shared infrastructure and a software framework for implementing the presentation and business layers. The platform aims to reduce software development complexity, increase interoperability between applications, and enable solutions that are easier to adapt to users' needs.</p>
 
-            <p class="selection-reference">Problemele, nevoile și ofertele bifate la pasul 2 vor fi enumerate în această parte a scrisorii.</p>
+            <p class="selection-reference">The problems, needs, and offerings selected in step 2 will be listed in this part of the letter.</p>
 
-            <p>Prin selectarea opțiunilor de mai sus, compania noastră confirmă că problemele și nevoile bifate sunt reale și relevante pentru activitatea sa. În urma prezentării prototipului la TRL 3–4, compania noastră își exprimă interesul concret pentru o nouă demonstrație tehnică a platformei Web of Objects la un nivel de maturitate tehnologică superior și, după atingerea nivelului necesar testării operaționale, pentru participarea la un proiect-pilot. Dacă noua demonstrație și proiectul-pilot confirmă aplicabilitatea și beneficiile soluției pentru companie, suntem interesați să evaluăm oferta tehnică și comercială în vederea adoptării și achiziției.</p>
+            <p>By selecting the options above, our company confirms that the selected problems and needs are real and relevant to its operations. Following the presentation of the prototype at TRL 3–4, our company expresses concrete interest in a new technical demonstration of the Web of Objects platform at a higher Technology Readiness Level and, once the level required for operational testing has been reached, in participating in a pilot project. If the new demonstration and pilot project confirm the applicability and benefits of the solution for our company, we are interested in evaluating the technical and commercial offer with a view to adoption and purchase.</p>
 
-            <p>Suntem de acord ca această scrisoare să fie utilizată de George-Valentin Marin pentru pregătirea proiectului și, după înmatriculare, de Web Society S.R.L. în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects, ca dovadă a existenței problemei și a interesului de evaluare, testare sau adopție a soluției, cu respectarea informațiilor declarate confidențiale de compania noastră.</p>
+            <p>We agree that this letter may be used by George-Valentin Marin for project preparation and, following incorporation, by Web Society S.R.L. in the funding application documentation for the development of the Web of Objects platform, as evidence of the existence of the problem and of interest in evaluating, testing, or adopting the solution, subject to respect for information declared confidential by our company.</p>
 
-            <p>Prezenta scrisoare exprimă un interes real pentru continuarea evaluării soluției, fără a constitui un contract, o comandă fermă sau o obligație necondiționată de cumpărare.</p>
+            <p>This letter expresses genuine interest in continuing the evaluation of the solution without constituting a contract, a firm order, or an unconditional purchase commitment.</p>
 
-            <p>Declar că am calitatea necesară pentru a exprima interesul companiei și confirm corectitudinea informațiilor completate.</p>
+            <p>I declare that I have the necessary authority to express the company's interest and confirm the accuracy of the information provided.</p>
 
-            <p><strong>Compania:</strong> <span class="preview-value" id="preview-company-signature">[denumirea companiei]</span><br><strong>Reprezentant:</strong> <span class="preview-value" id="preview-representative">[nume și funcție]</span></p>
+            <p><strong>Company:</strong> <span class="preview-value" id="preview-company-signature">[company name]</span><br><strong>Representative:</strong> <span class="preview-value" id="preview-representative">[name and role]</span></p>
           </div>
         </div>
 
         <div class="signature-wrap" id="signature-wrap">
-          <canvas id="signature-pad" width="1200" height="360" role="img" aria-label="Spațiu pentru desenarea semnăturii"></canvas>
-          <div class="signature-placeholder">Desenați semnătura în acest spațiu</div>
+          <canvas id="signature-pad" width="1200" height="360" role="img" aria-label="Area for drawing the signature"></canvas>
+          <div class="signature-placeholder">Draw your signature in this area</div>
         </div>
         <div class="signature-actions">
-          <span>Semnătura va fi inclusă numai în PDF-ul descărcat.</span>
-          <button class="text-button" type="button" id="clear-signature">Șterge semnătura</button>
+          <span>The signature will only be included in the downloaded PDF.</span>
+          <button class="text-button" type="button" id="clear-signature">Clear signature</button>
         </div>
 
         <div class="agreement">
           <label class="choice">
             <input id="agreement" type="checkbox" name="agreement" required>
-            <span>Declar că am calitatea necesară pentru a exprima interesul companiei și confirm corectitudinea informațiilor completate. Sunt de acord ca scrisoarea să fie utilizată de George-Valentin Marin pentru pregătirea proiectului și, după înmatriculare, de Web Society S.R.L. în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects. Înțeleg caracterul neangajant al scrisorii.</span>
+            <span>I declare that I have the necessary authority to express the company's interest and confirm the accuracy of the information provided. I agree that the letter may be used by George-Valentin Marin for project preparation and, following incorporation, by Web Society S.R.L. in the funding application documentation for the development of the Web of Objects platform. I understand the non-binding nature of this letter.</span>
           </label>
         </div>
 
         <div class="form-actions">
-          <button class="primary-button" id="generate-pdf" type="submit">Generează și descarcă scrisoarea PDF</button>
+          <button class="primary-button" id="generate-pdf" type="submit">Generate and download the PDF letter</button>
           <p class="status" id="form-status" role="status" aria-live="polite"></p>
         </div>
 
         <div class="next-step" id="next-step" hidden>
-          <strong>PDF-ul a fost generat.</strong>
-          <p>Trimiteți fișierul descărcat, de preferat de pe adresa profesională a companiei, persoanei de contact Web Society care v-a transmis această pagină.</p>
+          <strong>The PDF has been generated.</strong>
+          <p>Send the downloaded file, preferably from your company email address, to the Web Society contact who shared this page with you.</p>
         </div>
       </section>
     </form>
 
     <noscript>
-      <div class="panel" style="margin-top: 1rem;">Pentru completarea și generarea locală a PDF-ului este necesară activarea JavaScript în browser.</div>
+      <div class="panel" style="margin-top: 1rem;">JavaScript must be enabled in your browser to complete the form and generate the PDF locally.</div>
     </noscript>
   </main>
 
-  <footer>© 2026 Proiectul Web of Objects</footer>
+  <footer>© 2026 The Web of Objects Project</footer>
 
   <script>
   (() => {
@@ -756,12 +756,12 @@
     };
 
     function updateLetterPreview() {
-      const companyName = document.getElementById("company-name").value.trim() || "[denumirea companiei]";
-      const companyCui = document.getElementById("company-cui").value.trim() || "[CUI]";
-      const date = formatDate(document.getElementById("letter-date").value) || "[data]";
+      const companyName = document.getElementById("company-name").value.trim() || "[company name]";
+      const companyCui = document.getElementById("company-cui").value.trim() || "[registration or tax number]";
+      const date = formatDate(document.getElementById("letter-date").value) || "[date]";
       const representativeName = document.getElementById("representative-name").value.trim();
       const representativeRole = document.getElementById("representative-role").value.trim();
-      const representative = [representativeName, representativeRole].filter(Boolean).join(", ") || "[nume și funcție]";
+      const representative = [representativeName, representativeRole].filter(Boolean).join(", ") || "[name and role]";
 
       document.getElementById("preview-company").textContent = companyName;
       document.getElementById("preview-company-signature").textContent = companyName;
@@ -831,7 +831,7 @@
       signatureContext.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
       hasSignature = false;
       signatureWrap.classList.remove("has-signature");
-      setStatus("Semnătura a fost ștearsă.", "");
+      setStatus("The signature has been cleared.", "");
     });
 
     function setStatus(message, type) {
@@ -845,8 +845,11 @@
 
     function formatDate(isoDate) {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate)) return isoDate;
-      const [year, month, day] = isoDate.split("-");
-      return `${day}.${month}.${year}`;
+      return new Date(`${isoDate}T00:00:00`).toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
     }
 
     function cleanFilename(value) {
@@ -855,7 +858,7 @@
         .replace(/[\u0300-\u036f]/g, "")
         .replace(/[^a-zA-Z0-9]+/g, "-")
         .replace(/^-+|-+$/g, "")
-        .slice(0, 70) || "Companie";
+        .slice(0, 70) || "Company";
     }
 
     function loadImage(source) {
@@ -894,7 +897,7 @@
         if (this.pages.length > 1) {
           this.context.font = "700 22px Arial, sans-serif";
           this.context.fillStyle = "#364052";
-          this.context.fillText("Scrisoare de interes — Web of Objects", this.marginX, 62);
+          this.context.fillText("Letter of Interest — Web of Objects", this.marginX, 62);
           this.context.fillStyle = "#ff7a18";
           this.context.fillRect(this.marginX, 98, this.width - this.marginX * 2, 4);
           this.y = 138;
@@ -1003,12 +1006,12 @@
         }
         this.setFont(35, 800);
         this.context.fillStyle = "#111827";
-        this.context.fillText("Scrisoare de interes", 265, 69);
+        this.context.fillText("Letter of Interest", 265, 69);
         this.setFont(23, 600);
         this.context.fillStyle = "#526076";
         this.context.fillText("Web of Objects", 265, 119);
         this.setFont(21, 400);
-        this.context.fillText(`Data: ${date}`, this.width - this.marginX - 190, 73);
+        this.context.fillText(`Date: ${date}`, this.width - this.marginX - 260, 73);
         this.context.fillStyle = "#ff7a18";
         this.context.fillRect(this.marginX, 205, this.width - this.marginX * 2, 5);
         this.y = 250;
@@ -1016,13 +1019,13 @@
 
       signatureBlock(data) {
         this.ensureSpace(390);
-        this.paragraph("Cu stimă,", { gap: 14 });
+        this.paragraph("Yours faithfully,", { gap: 14 });
         this.paragraph(data.companyName, { weight: 700, gap: 8 });
-        this.paragraph(`Reprezentantul companiei: ${data.representativeName}, ${data.representativeRole}`, { gap: 12 });
+        this.paragraph(`Company representative: ${data.representativeName}, ${data.representativeRole}`, { gap: 12 });
 
         this.setFont(21, 700);
         this.context.fillStyle = "#526076";
-        this.context.fillText("Semnătură", this.marginX, this.y);
+        this.context.fillText("Signature", this.marginX, this.y);
         this.y += 34;
         this.context.strokeStyle = "#c8ced8";
         this.context.lineWidth = 2;
@@ -1030,7 +1033,7 @@
         this.context.drawImage(signatureCanvas, this.marginX + 12, this.y + 10, 436, 120);
         this.setFont(22, 400);
         this.context.fillStyle = "#253047";
-        this.context.fillText(`Data: ${data.date}`, this.marginX + 535, this.y + 52);
+        this.context.fillText(`Date: ${data.date}`, this.marginX + 535, this.y + 52);
         this.y += 180;
       }
 
@@ -1045,8 +1048,8 @@
           context.stroke();
           context.font = "400 18px Arial, sans-serif";
           context.fillStyle = "#7a8495";
-          context.fillText("Proiectul Web of Objects", this.marginX, this.height - 55);
-          const pageText = `Pagina ${index + 1} / ${this.pages.length}`;
+          context.fillText("The Web of Objects Project", this.marginX, this.height - 55);
+          const pageText = `Page ${index + 1} / ${this.pages.length}`;
           const pageWidth = context.measureText(pageText).width;
           context.fillText(pageText, this.width - this.marginX - pageWidth, this.height - 55);
         });
@@ -1105,7 +1108,7 @@
       objects[1] = textBytes("<< /Type /Catalog /Pages 2 0 R >>");
       objects[2] = textBytes(`<< /Type /Pages /Kids [${pageRefs.join(" ")}] /Count ${pageCanvases.length} >>`);
       const pdfDate = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
-      objects[infoObject] = textBytes(`<< /Title (Scrisoare de interes - Web of Objects) /Producer (Web of Objects local PDF generator) /CreationDate (D:${pdfDate}) >>`);
+      objects[infoObject] = textBytes(`<< /Title (Letter of Interest - Web of Objects) /Producer (Web of Objects local PDF generator) /CreationDate (D:${pdfDate}) >>`);
 
       const chunks = [textBytes("%PDF-1.4\n%WOO\n")];
       const offsets = new Array(maxObject + 1).fill(0);
@@ -1138,36 +1141,36 @@
 
       const documentRenderer = new LetterDocument(logo);
       documentRenderer.firstPageHeader(data.date);
-      documentRenderer.paragraph("Către: George-Valentin Marin", { weight: 700, gap: 6 });
-      documentRenderer.paragraph("Calitate: Inițiator al proiectului Web of Objects și fondator al Web Society S.R.L. — societate în curs de constituire", { gap: 18 });
-      documentRenderer.paragraph("Subiect: Exprimarea interesului pentru soluția Web of Objects", { weight: 700, gap: 26 });
-      documentRenderer.paragraph("Stimată doamnă/Stimate domn,", { gap: 20 });
+      documentRenderer.paragraph("To: George-Valentin Marin", { weight: 700, gap: 6 });
+      documentRenderer.paragraph("Capacity: Initiator of the Web of Objects project and founder of Web Society S.R.L. — a company in the process of incorporation", { gap: 18 });
+      documentRenderer.paragraph("Subject: Expression of interest in the Web of Objects solution", { weight: 700, gap: 26 });
+      documentRenderer.paragraph("Dear Sir or Madam,", { gap: 20 });
       documentRenderer.paragraph(
-        `Prin prezenta, ${data.companyName}, CUI ${data.companyCui}, confirmă interesul față de proiectul Web of Objects — WoO, inițiat de George-Valentin Marin și care urmează să fie dezvoltat și comercializat prin Web Society S.R.L., după înmatricularea societății.`
+        `By this letter, ${data.companyName}, company registration or tax number ${data.companyCui}, confirms its interest in the Web of Objects — WoO project, initiated by George-Valentin Marin and intended to be developed and commercialized through Web Society S.R.L. following the company's incorporation.`
       );
       documentRenderer.paragraph(
-        "Reprezentanților companiei noastre le-a fost prezentat prototipul platformei Web of Objects, aflat la nivelul de maturitate tehnologică TRL 3–4. Web of Objects este o platformă software generală pentru construirea și operarea aplicațiilor, care furnizează o infrastructură comună și un cadru software pentru realizarea stratului de prezentare și a stratului de business. Platforma urmărește reducerea complexității dezvoltării software, creșterea interoperabilității dintre aplicații și realizarea unor soluții mai ușor de adaptat la nevoile utilizatorilor."
+        "Representatives of our company have been presented with the prototype of the Web of Objects platform at Technology Readiness Level TRL 3–4. Web of Objects is a general-purpose software platform for building and operating applications, providing shared infrastructure and a software framework for implementing the presentation and business layers. The platform aims to reduce software development complexity, increase interoperability between applications, and enable solutions that are easier to adapt to users' needs."
       );
 
-      documentRenderer.sectionTitle("Nevoile și relevanța pentru compania noastră");
-      documentRenderer.paragraph("În activitatea companiei sunt relevante următoarele probleme ori nevoi:", { gap: 15 });
+      documentRenderer.sectionTitle("Our company's needs and relevance");
+      documentRenderer.paragraph("The following problems or needs are relevant to our company's operations:", { gap: 15 });
       data.needs.forEach(need => documentRenderer.selectedItem(need));
-      if (data.otherNeed) documentRenderer.selectedItem(`Altă problemă sau nevoie: ${data.otherNeed}`);
+      if (data.otherNeed) documentRenderer.selectedItem(`Other problem or need: ${data.otherNeed}`);
 
-      documentRenderer.paragraph("Considerăm relevantă pentru activitatea noastră următoarea ofertă:", { weight: 700, gap: 15 });
+      documentRenderer.paragraph("We consider the following offering relevant to our operations:", { weight: 700, gap: 15 });
       data.offers.forEach(offer => documentRenderer.selectedItem(offer));
 
       documentRenderer.paragraph(
-        "Prin selectarea opțiunilor de mai sus, compania noastră confirmă că problemele și nevoile bifate sunt reale și relevante pentru activitatea sa. În urma prezentării prototipului la TRL 3–4, compania noastră își exprimă interesul concret pentru o nouă demonstrație tehnică a platformei Web of Objects la un nivel de maturitate tehnologică superior și, după atingerea nivelului necesar testării operaționale, pentru participarea la un proiect-pilot. Dacă noua demonstrație și proiectul-pilot confirmă aplicabilitatea și beneficiile soluției pentru companie, suntem interesați să evaluăm oferta tehnică și comercială în vederea adoptării și achiziției."
+        "By selecting the options above, our company confirms that the selected problems and needs are real and relevant to its operations. Following the presentation of the prototype at TRL 3–4, our company expresses concrete interest in a new technical demonstration of the Web of Objects platform at a higher Technology Readiness Level and, once the level required for operational testing has been reached, in participating in a pilot project. If the new demonstration and pilot project confirm the applicability and benefits of the solution for our company, we are interested in evaluating the technical and commercial offer with a view to adoption and purchase."
       );
       documentRenderer.paragraph(
-        "Suntem de acord ca această scrisoare să fie utilizată de George-Valentin Marin pentru pregătirea proiectului și, după înmatriculare, de Web Society S.R.L. în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects, ca dovadă a existenței problemei și a interesului de evaluare, testare sau adopție a soluției, cu respectarea informațiilor declarate confidențiale de compania noastră."
+        "We agree that this letter may be used by George-Valentin Marin for project preparation and, following incorporation, by Web Society S.R.L. in the funding application documentation for the development of the Web of Objects platform, as evidence of the existence of the problem and of interest in evaluating, testing, or adopting the solution, subject to respect for information declared confidential by our company."
       );
       documentRenderer.paragraph(
-        "Prezenta scrisoare exprimă un interes real pentru continuarea evaluării soluției, fără a constitui un contract, o comandă fermă sau o obligație necondiționată de cumpărare."
+        "This letter expresses genuine interest in continuing the evaluation of the solution without constituting a contract, a firm order, or an unconditional purchase commitment."
       );
       documentRenderer.paragraph(
-        "Declar că am calitatea necesară pentru a exprima interesul companiei și confirm corectitudinea informațiilor completate.",
+        "I declare that I have the necessary authority to express the company's interest and confirm the accuracy of the information provided.",
         { weight: 700 }
       );
       documentRenderer.signatureBlock(data);
@@ -1194,7 +1197,7 @@
 
       if (!form.checkValidity()) {
         form.reportValidity();
-        setStatus("Completați toate câmpurile obligatorii și confirmarea finală.", "error");
+        setStatus("Complete all required fields and the final confirmation.", "error");
         return;
       }
 
@@ -1203,17 +1206,17 @@
       const offers = checkedValues("offers");
 
       if (!needs.length && !otherNeed) {
-        setStatus("Selectați cel puțin o problemă sau nevoie relevantă.", "error");
+        setStatus("Select at least one relevant problem or need.", "error");
         document.getElementById("needs-group").focus();
         return;
       }
       if (!offers.length) {
-        setStatus("Selectați cel puțin o ofertă Web of Objects relevantă.", "error");
+        setStatus("Select at least one relevant Web of Objects offering.", "error");
         document.getElementById("offers-group").focus();
         return;
       }
       if (!hasSignature) {
-        setStatus("Desenați semnătura reprezentantului companiei.", "error");
+        setStatus("Draw the company representative's signature.", "error");
         signatureCanvas.focus();
         signatureWrap.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
@@ -1232,20 +1235,20 @@
 
       try {
         generateButton.disabled = true;
-        generateButton.textContent = "Se generează PDF-ul…";
-        setStatus("PDF-ul este creat local pe dispozitivul dumneavoastră.", "");
+        generateButton.textContent = "Generating the PDF…";
+        setStatus("The PDF is being created locally on your device.", "");
         await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
         const pdf = await createLetterPdf(data);
-        downloadBlob(pdf, `Scrisoare-interes-Web-of-Objects-${cleanFilename(data.companyName)}.pdf`);
-        setStatus("Scrisoarea a fost generată și descărcată.", "success");
+        downloadBlob(pdf, `Letter-of-Interest-Web-of-Objects-${cleanFilename(data.companyName)}.pdf`);
+        setStatus("The letter has been generated and downloaded.", "success");
         nextStep.hidden = false;
         nextStep.scrollIntoView({ behavior: "smooth", block: "nearest" });
       } catch (error) {
         console.error(error);
-        setStatus("PDF-ul nu a putut fi generat. Reîncercați sau utilizați un browser actualizat.", "error");
+        setStatus("The PDF could not be generated. Try again or use an up-to-date browser.", "error");
       } finally {
         generateButton.disabled = false;
-        generateButton.textContent = "Generează și descarcă scrisoarea PDF";
+        generateButton.textContent = "Generate and download the PDF letter";
       }
     });
   })();
