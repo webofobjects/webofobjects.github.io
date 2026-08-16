@@ -984,7 +984,11 @@
       }
 
       firstPageHeader(date) {
-        if (this.logo) this.context.drawImage(this.logo, this.marginX, 55, 125, 125);
+        if (this.logo) {
+          const logoWidth = 145;
+          const logoHeight = logoWidth * (this.logo.naturalHeight / this.logo.naturalWidth);
+          this.context.drawImage(this.logo, this.marginX, 55, logoWidth, logoHeight);
+        }
         this.setFont(35, 800);
         this.context.fillStyle = "#111827";
         this.context.fillText("Scrisoare de interes", 265, 69);
@@ -1115,7 +1119,7 @@
     async function createLetterPdf(data) {
       let logo = null;
       try {
-        logo = await loadImage("/logo.png");
+        logo = await loadImage("/scrisoare-de-interes/logo-text-negru.webp");
       } catch (_) {
         logo = null;
       }
