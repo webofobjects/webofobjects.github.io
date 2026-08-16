@@ -369,6 +369,61 @@
 
     .agreement .choice { background: rgba(255, 122, 24, 0.05); }
 
+    .letter-preview {
+      margin-bottom: 1.4rem;
+      padding: clamp(1rem, 3vw, 1.45rem);
+      color: #263247;
+      background: #f8fafc;
+      border: 1px solid #d5dce6;
+      border-radius: 12px;
+      box-shadow: inset 0 1px 0 #ffffff;
+    }
+
+    .letter-preview h3 {
+      margin: 0 0 0.35rem;
+      color: #101827;
+      font-size: 1.05rem;
+    }
+
+    .letter-preview .preview-note {
+      margin: 0 0 1.15rem;
+      color: #647188;
+      font-size: 0.88rem;
+    }
+
+    .letter-preview .preview-meta {
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid #dce2ea;
+      font-size: 0.92rem;
+    }
+
+    .letter-preview .preview-meta p,
+    .letter-preview .preview-body p {
+      margin: 0 0 0.75rem;
+    }
+
+    .letter-preview .preview-body {
+      padding-top: 1rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.97rem;
+      line-height: 1.58;
+    }
+
+    .letter-preview .selection-reference {
+      padding: 0.75rem 0.85rem;
+      background: #edf4fb;
+      border-left: 4px solid #4da8ff;
+      border-radius: 6px;
+      color: #34445d;
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .preview-value {
+      color: #101827;
+      font-weight: 700;
+    }
+
     .form-actions {
       display: grid;
       gap: 0.75rem;
@@ -591,7 +646,38 @@
           <div class="step" aria-hidden="true">3</div>
           <div>
             <h2 id="signature-heading">Confirmare și semnătură</h2>
-            <p>Semnați folosind mouse-ul, touchpad-ul, degetul sau un stylus.</p>
+            <p>Citiți textul confirmat, apoi semnați folosind mouse-ul, touchpad-ul, degetul sau un stylus.</p>
+          </div>
+        </div>
+
+        <div class="letter-preview" aria-labelledby="letter-preview-heading">
+          <h3 id="letter-preview-heading">Textul confirmat prin semnare</h3>
+          <p class="preview-note">Acest text și opțiunile selectate la pasul anterior vor fi incluse în PDF.</p>
+
+          <div class="preview-meta">
+            <p><strong>Data:</strong> <span class="preview-value" id="preview-date">[data]</span></p>
+            <p><strong>Către:</strong> Web Society S.R.L.<br><strong>În atenția:</strong> George-Valentin Marin, Asociat</p>
+            <p><strong>Subiect:</strong> Exprimarea interesului pentru soluția Web of Objects</p>
+          </div>
+
+          <div class="preview-body">
+            <p>Stimată doamnă/Stimate domn,</p>
+
+            <p>Prin prezenta, <span class="preview-value" id="preview-company">[denumirea companiei]</span>, CUI <span class="preview-value" id="preview-cui">[CUI]</span>, confirmă interesul față de proiectul <strong>Web of Objects — WoO</strong>, dezvoltat de Web Society S.R.L.</p>
+
+            <p>Reprezentanților companiei noastre le-a fost prezentată platforma Web of Objects, o platformă software generală pentru construirea și operarea aplicațiilor, care furnizează o infrastructură comună și un cadru software pentru realizarea stratului de prezentare și a stratului de business. Platforma urmărește reducerea complexității dezvoltării software, creșterea interoperabilității dintre aplicații și realizarea unor soluții mai ușor de adaptat la nevoile utilizatorilor.</p>
+
+            <p class="selection-reference">Problemele, nevoile și ofertele bifate la pasul 2 vor fi enumerate în această parte a scrisorii.</p>
+
+            <p>Prin selectarea opțiunilor de mai sus, compania noastră confirmă relevanța acestora și își exprimă interesul pentru o prezentare sau demonstrație Web of Objects și, după caz, pentru participarea la un proiect-pilot și evaluarea unei viitoare oferte comerciale.</p>
+
+            <p>Suntem de acord ca această scrisoare să fie utilizată de Web Society S.R.L. în documentația proiectului de finanțare pentru dezvoltarea platformei Web of Objects, ca dovadă a existenței problemei și a interesului de evaluare, testare sau adopție a soluției, cu respectarea informațiilor declarate confidențiale de compania noastră.</p>
+
+            <p>Prezenta scrisoare exprimă un interes real pentru continuarea evaluării soluției, fără a constitui un contract, o comandă fermă sau o obligație necondiționată de cumpărare.</p>
+
+            <p>Declar că am calitatea necesară pentru a exprima interesul companiei și confirm corectitudinea informațiilor completate.</p>
+
+            <p><strong>Compania:</strong> <span class="preview-value" id="preview-company-signature">[denumirea companiei]</span><br><strong>Reprezentant:</strong> <span class="preview-value" id="preview-representative">[nume și funcție]</span></p>
           </div>
         </div>
 
@@ -650,6 +736,35 @@
       .toISOString()
       .slice(0, 10);
     document.getElementById("letter-date").value = localToday;
+
+    const previewFields = {
+      "company-name": ["preview-company", "preview-company-signature"],
+      "company-cui": ["preview-cui"],
+      "letter-date": ["preview-date"],
+      "representative-name": ["preview-representative"],
+      "representative-role": ["preview-representative"]
+    };
+
+    function updateLetterPreview() {
+      const companyName = document.getElementById("company-name").value.trim() || "[denumirea companiei]";
+      const companyCui = document.getElementById("company-cui").value.trim() || "[CUI]";
+      const date = formatDate(document.getElementById("letter-date").value) || "[data]";
+      const representativeName = document.getElementById("representative-name").value.trim();
+      const representativeRole = document.getElementById("representative-role").value.trim();
+      const representative = [representativeName, representativeRole].filter(Boolean).join(", ") || "[nume și funcție]";
+
+      document.getElementById("preview-company").textContent = companyName;
+      document.getElementById("preview-company-signature").textContent = companyName;
+      document.getElementById("preview-cui").textContent = companyCui;
+      document.getElementById("preview-date").textContent = date;
+      document.getElementById("preview-representative").textContent = representative;
+    }
+
+    Object.keys(previewFields).forEach(id => {
+      document.getElementById(id).addEventListener("input", updateLetterPreview);
+      document.getElementById(id).addEventListener("change", updateLetterPreview);
+    });
+    updateLetterPreview();
 
     signatureContext.strokeStyle = "#111827";
     signatureContext.fillStyle = "#111827";
