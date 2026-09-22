@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ofertă comercială</title>
+  <meta name="description" content="Servicii de dezvoltare software printr-un programator senior, pentru POCIDIF 2.1.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://webofobjects.com/oferta-programator-senior/">
+  <link rel="stylesheet" href="/assets/commercial-offer.css">
+  <script src="/assets/commercial-offer.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><nav class="header-actions" aria-label="Navigare">
+    <a class="back-link" href="/senior-programmer-offer/" lang="en">English</a>
+    <a class="back-link" href="/">Înapoi la site</a>
+  </nav></header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="eyebrow">Generare locală și privată</div>
+      <h1 id="page-title">Ofertă comercială</h1>
+      <p>Servicii de dezvoltare software printr-un programator senior, pentru POCIDIF 2.1.</p>
+    </section>
+    <aside class="privacy-note"><div><strong>Datele rămân în browserul dumneavoastră.</strong><span>Datele ofertei și semnătura nu sunt transmise sau salvate de această pagină. PDF-ul este creat local, pe dispozitivul utilizat.</span></div></aside>
+    <form id="offer-form" novalidate>
+      <section class="panel" aria-labelledby="provider-heading">
+        <div class="panel-heading"><div class="step" aria-hidden="true">1</div><div><h2 id="provider-heading">Ofertantul și reprezentantul</h2><p>Datele emitentului ofertei.</p></div></div>
+        <div class="field-grid"><div class="field full"><label class="field-label" for="provider-name">Denumirea ofertantului <span class="required">*</span></label><input id="provider-name" name="provider-name" type="text" required maxlength="180" autocomplete="organization"></div>
+<div class="field"><label class="field-label" for="provider-tax-id">CUI / CIF <span class="required">*</span></label><input id="provider-tax-id" name="provider-tax-id" type="text" required maxlength="50"></div>
+<div class="field"><label class="field-label" for="offer-number">Numărul ofertei <span class="required">*</span></label><input id="offer-number" name="offer-number" type="text" required maxlength="60"></div>
+<div class="field"><label class="field-label" for="offer-date">Data emiterii <span class="required">*</span></label><input id="offer-date" name="offer-date" type="date" required></div>
+<div class="field"><label class="field-label" for="representative-name">Numele reprezentantului <span class="required">*</span></label><input id="representative-name" name="representative-name" type="text" required maxlength="120" autocomplete="name"></div>
+<div class="field full"><label class="field-label" for="representative-role">Funcția <span class="required">*</span></label><input id="representative-role" name="representative-role" type="text" required maxlength="120" autocomplete="organization-title"></div></div>
+      </section>
+      <section class="panel" aria-labelledby="financial-heading">
+        <div class="panel-heading"><div class="step" aria-hidden="true">2</div><div><h2 id="financial-heading">Tarifele ofertei</h2><p>Sumele sunt exprimate în EUR, fără TVA.</p></div></div>
+        <div class="field-grid">
+          <div class="field"><label class="field-label" for="hourly-rate">Tarif programator senior <span class="required">*</span></label><input id="hourly-rate" name="hourly-rate" type="text" required maxlength="12" inputmode="decimal" data-money="positive" aria-describedby="hourly-rate-hint"><p class="field-hint" id="hourly-rate-hint">EUR / oră / persoană + TVA</p></div>
+          <div class="field"><label class="field-label" for="ai-cost">Cost lunar instrumente / servicii AI <span class="required">*</span></label><input id="ai-cost" name="ai-cost" type="text" required maxlength="12" inputmode="decimal" data-money="nonnegative" aria-describedby="ai-cost-hint"><p class="field-hint" id="ai-cost-hint">EUR / lună + TVA</p></div>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="signature-heading">
+        <div class="panel-heading"><div class="step" aria-hidden="true">3</div><div><h2 id="signature-heading">Oferta și semnătura</h2><p>Textul de mai jos va apărea în PDF-ul ofertei.</p></div></div>
+        <article class="offer-preview" id="offer-preview" aria-label="Ofertă comercială">
+          <h3 data-pdf="title">Ofertă comercială</h3>
+<p data-pdf="subtitle">Servicii de dezvoltare software – programator senior</p>
+<p data-pdf="meta"><strong>Ofertant:</strong> <span class="preview-value" data-field="provider-name" data-placeholder="[denumirea ofertantului]">[denumirea ofertantului]</span></p>
+<p data-pdf="meta"><strong>CUI / CIF:</strong> <span class="preview-value" data-field="provider-tax-id" data-placeholder="[CUI / CIF]">[CUI / CIF]</span> · <strong>Nr. ofertă:</strong> <span class="preview-value" data-field="offer-number" data-placeholder="[număr]">[număr]</span></p>
+<p data-pdf="meta"><strong>Data:</strong> <span class="preview-value" data-field="offer-date" data-placeholder="[data]">[data]</span></p>
+<p data-pdf="meta"><strong>Către:</strong> WEB SOCIETY SRL</p>
+<p data-pdf="meta"><strong>CUI:</strong> 55529409</p>
+<h4 data-pdf="heading">Destinația ofertei</h4>
+<p data-pdf="body">Prezenta ofertă este emisă în vederea utilizării în cadrul programului de finanțare europeană POCIDIF 2.1.</p>
+<h4 data-pdf="heading">Obiectul ofertei</h4>
+<p data-pdf="body">Furnizarea, în regim de tarifare orară, a serviciilor unui programator senior cu peste 6 ani de experiență profesională în dezvoltare software și expertiză într-un limbaj de programare utilizat curent în industrie.</p>
+<p data-pdf="body">Serviciile sunt prestate de un programator senior cu cunoștințe solide de algoritmi și structuri de date, arhitectură software și system design, precum și experiență în proiecte software complexe, versionarea codului și code review, testare și debugging, baze de date, integrarea API-urilor, securitatea și calitatea codului. Limba engleză: minimum B2 (CEFR), inclusiv pentru comunicare și documentație tehnică.</p>
+<p data-pdf="body">Alocarea programatorului pentru prestarea serviciilor este condiționată de acceptarea acestuia de către WEB SOCIETY SRL în urma unui interviu tehnic.</p>
+<h4 data-pdf="heading">Oferta financiară</h4>
+<p data-pdf="emphasis">Tarif programator senior: <span class="preview-value" data-field="hourly-rate" data-placeholder="[tarif]">[tarif]</span> EUR / oră / persoană + TVA.</p>
+<p data-pdf="emphasis">Cost instrumente / servicii AI utilizate în dezvoltarea software: <span class="preview-value" data-field="ai-cost" data-placeholder="[cost]">[cost]</span> EUR / lună + TVA.</p>
+<p data-pdf="body">Costul lunar AI acoperă abonamente, licențe, API-uri sau alte instrumente de inteligență artificială utilizate pentru activitățile de dezvoltare software din proiect.</p>
+<p data-pdf="emphasis">Volum estimat: 160 ore / lună (20 zile × 8 ore)</p>
+<p data-pdf="emphasis">Perioada estimată: începând cu februarie 2026, pentru 24 de luni (până în ianuarie 2028 inclusiv).</p>
+<p data-pdf="body">Facturare: lunar, în funcție de numărul de ore efectiv prestate, la care se adaugă costul lunar aferent instrumentelor / serviciilor AI.</p>
+<p data-pdf="emphasis">Valabilitatea ofertei: 6 luni de la data emiterii.</p>
+<p data-pdf="emphasis">Prezenta este o ofertă comercială. Condițiile contractuale se vor stabili ulterior, prin contractul încheiat între părți.</p>
+<p data-pdf="closing">Cu stimă,</p>
+<p data-pdf="signatory"><strong>Reprezentant ofertant:</strong> <span class="preview-value" data-field="representative-name" data-placeholder="[nume și prenume]">[nume și prenume]</span></p>
+<p data-pdf="signatory"><strong>Funcția:</strong> <span class="preview-value" data-field="representative-role" data-placeholder="[funcția]">[funcția]</span></p>
+<p data-pdf="signature">Semnătură</p>
+        </article>
+        <div class="signature-wrap" id="signature-wrap">
+          <canvas id="signature-pad" width="1200" height="360" tabindex="0" role="img" aria-label="Spațiu pentru semnătura reprezentantului ofertantului"></canvas>
+          <div class="signature-placeholder">Desenați semnătura în acest spațiu</div>
+        </div>
+        <div class="signature-actions"><span>Semnătura apare numai în PDF-ul descărcat.</span><button class="text-button" type="button" id="clear-signature">Șterge semnătura</button></div>
+        <div class="agreement"><label class="choice"><input id="agreement" type="checkbox" required><span>Confirm corectitudinea datelor și a textului ofertei și că am calitatea de a semna în numele ofertantului.</span></label></div>
+        <div class="form-actions"><button class="primary-button" id="generate-pdf" type="submit" disabled>Generează și descarcă oferta PDF</button><p class="status" id="form-status" role="status" aria-live="polite"></p></div>
+        <div class="next-step" id="next-step" hidden><strong>Oferta PDF a fost generată.</strong><p>Fișierul descărcat poate fi transmis către WEB SOCIETY SRL.</p></div>
+      </section>
+    </form>
+    <noscript><div class="panel">Activați JavaScript pentru completarea și generarea locală a ofertei PDF.</div></noscript>
+  </main>
+  <script id="offer-config" type="application/json">{"locale": "ro-RO", "pdfTitle": "Oferta comerciala", "filenamePrefix": "Oferta-programator-senior", "pageLabel": "Pagina", "generate": "Generează și descarcă oferta PDF", "generating": "Se generează PDF-ul…", "creating": "Oferta PDF este creată local.", "success": "Oferta a fost generată și descărcată.", "error": "PDF-ul nu a putut fi generat. Reîncercați.", "required": "Completați toate câmpurile obligatorii și confirmarea finală.", "blank": "Introduceți o valoare.", "positiveAmount": "Introduceți un tarif mai mare decât zero, cu cel mult două zecimale.", "nonnegativeAmount": "Introduceți un cost de minimum zero, cu cel mult două zecimale.", "missingSignature": "Adăugați semnătura reprezentantului ofertantului.", "cleared": "Semnătura a fost ștearsă."}</script>
+</body>
+</html>
